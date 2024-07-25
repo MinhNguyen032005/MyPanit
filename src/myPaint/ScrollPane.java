@@ -1,7 +1,14 @@
 package myPaint;
 
+import myPaint.shape.Oval;
+import myPaint.shape.Rhombus;
+import myPaint.shape.Square;
+import myPaint.shape.Triangle;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class ScrollPane extends JPanel {
     private JScrollPane scrollPane;
@@ -25,6 +32,8 @@ public class ScrollPane extends JPanel {
 
         public CustomPanel() {
             setPreferredSize(new Dimension(1000, 1000));
+
+
         }
 
         @Override
