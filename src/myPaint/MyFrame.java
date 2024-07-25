@@ -45,10 +45,13 @@ public class MyFrame extends JFrame {
         setVisible(true);
     }
 
+
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(800, 600);
     }
+
+
 
     public static void main(String[] args) {
         new MyFrame();

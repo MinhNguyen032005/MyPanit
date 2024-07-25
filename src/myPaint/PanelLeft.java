@@ -136,5 +136,8 @@ public class PanelLeft extends JPanel {
         panelLeft.setBackground(Color.white);
         add(panelLeft);
 
+
+
+
     }
 }

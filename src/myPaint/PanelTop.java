@@ -23,6 +23,7 @@ public class PanelTop extends JPanel {
         panelTop.add(box = new JCheckBox("Selected Mode"));
         // them anh vao jcomboBox
 
+
         URL url1 = MyFrame.class.getResource("/img/newLine_icon.png");
         Image img1 = Toolkit.getDefaultToolkit().createImage(url1);
         ImageIcon icon1 = new ImageIcon(img1);
@@ -50,6 +51,19 @@ public class PanelTop extends JPanel {
 
         icons = new ImageIcon[]{icon1, icon2, icon3, icon4, icon5, icon6, icon7, icon8};
 
+        URL url1 = MyFrame.class.getResource("/img/icon_Line_Level1.png");
+        Image img1 = Toolkit.getDefaultToolkit().createImage(url1);
+        ImageIcon icon1 = new ImageIcon(img1);
+        URL url2 = MyFrame.class.getResource("/img/icon_Line_level2.png");
+        Image img2 = Toolkit.getDefaultToolkit().createImage(url2);
+        ImageIcon icon2 = new ImageIcon(img2);
+        URL url3 = MyFrame.class.getResource("/img/icon_Line_Level3.png");
+        Image img3 = Toolkit.getDefaultToolkit().createImage(url3);
+        ImageIcon icon3 = new ImageIcon(img3);
+
+        icons = new ImageIcon[]{icon1, icon2, icon3};
+
+
         panelTop.add(comboBox = new JComboBox<>());
         for (int i = 0; i < icons.length; i++) {
             comboBox.addItem(icons[i]);
@@ -57,7 +71,7 @@ public class PanelTop extends JPanel {
 
         ChooseColor = new JPanel();
         JPanel container = new JPanel(new GridLayout(1, 2, 5, 5));
-        container.setBackground(Color.WHITE);
+        container.setBackground(Color.white);
         panelTop.add(container);
 
         panelTop.setSize(new Dimension(900, 200));
