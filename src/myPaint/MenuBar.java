@@ -6,15 +6,17 @@ import java.net.URL;
 
 public class MenuBar extends JMenuBar {
     private JMenuBar bar;
-    private JMenu mFile, mEdit, mFotmat,mColor, mView;
+    private JMenu mFile, mEdit, mFotmat, mView,mColor;
     private JMenuItem itemExit;
-    private JMenuItem  itemFill,itemMap,itemDefault,itemNew,itemZoomIn,itemZoomOut;
+    private JMenuItem itemColor, itemFill;
+    private JMenuItem  itemMap,itemDefault,itemNew,itemZoomIn,itemZoomOut;
     private JMenuItem Red, Green, Blue, Black, White, Pink, Yellow, Gray;
     private JMenuItem[] containerItem;
-    public MenuBar()  {
+    public MenuBar() {
         bar = new JMenuBar();
         bar.add(mFile = new JMenu("File"));
         mFile.setMnemonic('F');
+
 
 
         URL urlAddNew = MyFrame.class.getResource("/img/document-add-icon.png");
@@ -32,6 +34,12 @@ public class MenuBar extends JMenuBar {
         mEdit.setMnemonic('E');
 
 
+//        bar.add(mFotmat = new JMenu("Format"));
+//        mFotmat.setMnemonic('F');
+//        URL urlColr = MyFrame.class.getResource("/img/bangMau_icon.png");
+//        Image imgColr = Toolkit.getDefaultToolkit().createImage(urlColr);
+//        ImageIcon iconColr = new ImageIcon(imgColr);
+//        mEdit.add(itemColor = new JMenuItem("Color", iconColr));
 
 
 
@@ -65,7 +73,8 @@ public class MenuBar extends JMenuBar {
 
 
         bar.add(mView = new JMenu("View"));
-        mView.setMnemonic('V');
+
+
         URL urlZoomIn = MyFrame.class.getResource("/img/Zoom-In-icon.png");
         Image imgZoomIn = Toolkit.getDefaultToolkit().createImage(urlZoomIn);
         ImageIcon iconZoomIn = new ImageIcon(imgZoomIn);
