@@ -51,17 +51,17 @@ public class PanelTop extends JPanel {
 
         icons = new ImageIcon[]{icon1, icon2, icon3, icon4, icon5, icon6, icon7, icon8};
 
-        URL url1 = MyFrame.class.getResource("/img/icon_Line_Level1.png");
-        Image img1 = Toolkit.getDefaultToolkit().createImage(url1);
-        ImageIcon icon1 = new ImageIcon(img1);
-        URL url2 = MyFrame.class.getResource("/img/icon_Line_level2.png");
-        Image img2 = Toolkit.getDefaultToolkit().createImage(url2);
-        ImageIcon icon2 = new ImageIcon(img2);
-        URL url3 = MyFrame.class.getResource("/img/icon_Line_Level3.png");
-        Image img3 = Toolkit.getDefaultToolkit().createImage(url3);
-        ImageIcon icon3 = new ImageIcon(img3);
+        URL urla = MyFrame.class.getResource("/img/icon_Line_Level1.png");
+        Image imgea = Toolkit.getDefaultToolkit().createImage(urla);
+        ImageIcon icona = new ImageIcon(imgea);
+        URL urlb = MyFrame.class.getResource("/img/icon_Line_level2.png");
+        Image imgb = Toolkit.getDefaultToolkit().createImage(urlb);
+        ImageIcon iconb = new ImageIcon(imgb);
+        URL urlc = MyFrame.class.getResource("/img/icon_Line_Level3.png");
+        Image imgc = Toolkit.getDefaultToolkit().createImage(urlc);
+        ImageIcon iconc = new ImageIcon(imgc);
 
-        icons = new ImageIcon[]{icon1, icon2, icon3};
+        icons = new ImageIcon[]{icona, iconb, iconc};
 
 
         panelTop.add(comboBox = new JComboBox<>());
