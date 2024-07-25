@@ -4,8 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.net.URL;
 
-public class PanelTop  extends JPanel{
-    private  JPanel panelTop, panelColor;
+public class PanelTop extends JPanel {
+    private JPanel panelTop, panelColor;
     private JCheckBox box;
     private ImageIcon[] icons;
     private JComboBox<ImageIcon> comboBox;
@@ -14,6 +14,7 @@ public class PanelTop  extends JPanel{
     private JButton[] bangMau;
     private JButton pn1, pn2, pn3, pn4, pn5, pn6, pn7, pn8;
     private JButton btnZoom, btnUndo, btnFill, btnClear;
+
     public PanelTop() {
 
         //JToolBar
@@ -22,28 +23,28 @@ public class PanelTop  extends JPanel{
         panelTop.add(box = new JCheckBox("Selected Mode"));
         // them anh vao jcomboBox
 
-        URL url1 = Thanh_Truc.class.getResource("/img/newLine_icon.png");
+        URL url1 = MyFrame.class.getResource("/img/newLine_icon.png");
         Image img1 = Toolkit.getDefaultToolkit().createImage(url1);
         ImageIcon icon1 = new ImageIcon(img1);
-        URL url2 = Thanh_Truc.class.getResource("/img/icon_Rectangle.png");
+        URL url2 = MyFrame.class.getResource("/img/icon_Rectangle.png");
         Image img2 = Toolkit.getDefaultToolkit().createImage(url2);
         ImageIcon icon2 = new ImageIcon(img2);
-        URL url3 = Thanh_Truc.class.getResource("/img/oval-icon.png");
+        URL url3 = MyFrame.class.getResource("/img/oval-icon.png");
         Image img3 = Toolkit.getDefaultToolkit().createImage(url3);
         ImageIcon icon3 = new ImageIcon(img3);
-        URL url4 = Thanh_Truc.class.getResource("/img/square-icon.png");
+        URL url4 = MyFrame.class.getResource("/img/square-icon.png");
         Image img4 = Toolkit.getDefaultToolkit().createImage(url4);
         ImageIcon icon4 = new ImageIcon(img4);
-        URL url5 = Thanh_Truc.class.getResource("/img/icon_ecllip.png");
+        URL url5 = MyFrame.class.getResource("/img/icon_ecllip.png");
         Image img5 = Toolkit.getDefaultToolkit().createImage(url5);
         ImageIcon icon5 = new ImageIcon(img5);
-        URL url6 = Thanh_Truc.class.getResource("/img/rhombus-icon.png");
+        URL url6 = MyFrame.class.getResource("/img/rhombus-icon.png");
         Image img6 = Toolkit.getDefaultToolkit().createImage(url6);
         ImageIcon icon6 = new ImageIcon(img6);
-        URL url7 = Thanh_Truc.class.getResource("/img/triangle-icon.png");
+        URL url7 = MyFrame.class.getResource("/img/triangle-icon.png");
         Image img7 = Toolkit.getDefaultToolkit().createImage(url7);
         ImageIcon icon7 = new ImageIcon(img7);
-        URL url8 = Thanh_Truc.class.getResource("/img/icon_tronV.png");
+        URL url8 = MyFrame.class.getResource("/img/icon_tronV.png");
         Image img8 = Toolkit.getDefaultToolkit().createImage(url8);
         ImageIcon icon8 = new ImageIcon(img8);
 
@@ -61,7 +62,7 @@ public class PanelTop  extends JPanel{
 
         panelTop.setSize(new Dimension(900, 200));
         ChooseColor.setSize(new Dimension(200, 200));
-        panelTop.setBackground(Color.lightGray);
+        panelTop.setBackground(Color.WHITE);
         ChooseColor.setBackground(Color.yellow);
 
         ChooseColor.setSize(100, 200);
@@ -77,18 +78,18 @@ public class PanelTop  extends JPanel{
         }
         container.add(ChooseColor);
         container.add(panelColor);
-        URL urlUndo = Thanh_Truc.class.getResource("/img/Undo-icon.png");
+        URL urlUndo = MyFrame.class.getResource("/img/Undo-icon.png");
         Image imgUndo = Toolkit.getDefaultToolkit().createImage(urlUndo);
         ImageIcon iconUndo = new ImageIcon(imgUndo);
 
-        URL urlRemove = Thanh_Truc.class.getResource("/img/remove_icon.png");
+        URL urlRemove = MyFrame.class.getResource("/img/remove_icon.png");
         Image imgremove = Toolkit.getDefaultToolkit().createImage(urlRemove);
         ImageIcon iconRemove = new ImageIcon(imgremove);
 
-        URL urlFill = Thanh_Truc.class.getResource("/img/fill_icon.png");
+        URL urlFill = MyFrame.class.getResource("/img/fill_icon.png");
         Image imgrFill = Toolkit.getDefaultToolkit().createImage(urlFill);
         ImageIcon iconFill = new ImageIcon(imgrFill);
-        URL urlRedo = Thanh_Truc.class.getResource("/img/Arrows-Redo-icon.png");
+        URL urlRedo = MyFrame.class.getResource("/img/Arrows-Redo-icon.png");
         Image imgRedo = Toolkit.getDefaultToolkit().createImage(urlRedo);
         ImageIcon iconRedo = new ImageIcon(imgRedo);
 
