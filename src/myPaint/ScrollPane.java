@@ -4,7 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ScrollPane extends JPanel {
-    private  JScrollPane scrollPane;
+    private JScrollPane scrollPane;
+
     public ScrollPane() {
         scrollPane = new JScrollPane();
 
@@ -15,10 +16,10 @@ public class ScrollPane extends JPanel {
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         setLayout(new BorderLayout());
         add(scrollPane, BorderLayout.CENTER);
-//        scrollPane.add(customPanel);
 
 
     }
+
     class CustomPanel extends JPanel {
         private final int SQUARE_SIZE = 20;
 
