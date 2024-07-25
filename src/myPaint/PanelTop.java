@@ -2,6 +2,8 @@ package myPaint;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.net.URL;
 
 public class PanelTop extends JPanel {
@@ -72,8 +74,15 @@ public class PanelTop extends JPanel {
         colors = new Color[]{Color.red, Color.green, Color.BLUE, Color.BLACK, Color.WHITE, Color.PINK, Color.YELLOW, Color.GRAY};
         bangMau = new JButton[]{pn1, pn2, pn3, pn4, pn5, pn6, pn7, pn8};
         for (int i = 0; i < bangMau.length; i++) {
+            int index = i;
             bangMau[i] = new JButton();
             bangMau[i].setBackground(colors[i]);
+            bangMau[i].addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    ChooseColor.setBackground(colors[index]);
+                }
+            });
             panelColor.add(bangMau[i]);
         }
         container.add(ChooseColor);
