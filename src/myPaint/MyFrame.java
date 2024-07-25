@@ -10,6 +10,7 @@ public class MyFrame extends JFrame {
     private JTabbedPane tabbedPane;
 
 
+
     public MyFrame() {
         setTitle("GreenTeaPaint");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,10 +46,7 @@ public class MyFrame extends JFrame {
         setVisible(true);
     }
 
-    @Override
-    public Dimension getPreferredSize() {
-        return new Dimension(800, 600);
-    }
+
 
     public static void main(String[] args) {
         new MyFrame();
