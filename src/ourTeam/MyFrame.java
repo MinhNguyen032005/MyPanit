@@ -28,4 +28,8 @@ public class MyFrame extends JFrame {
     public static void main(String[] args) {
         new MyFrame();
     }
+
+    public static void newFrame() {
+      new MyFrame();
+    }
 }

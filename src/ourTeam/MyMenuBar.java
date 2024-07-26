@@ -2,7 +2,12 @@ package ourTeam;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.URL;
+
+
+
 //
 public class MyMenuBar extends JMenuBar {
     private JMenu mFile, mEdit, mFotmat, mView,mColor;
@@ -23,8 +28,28 @@ public class MyMenuBar extends JMenuBar {
             URL url =MyMenuBar.class.getResource("/img/"+itemsFile[i]+".png");
             Image img = Toolkit.getDefaultToolkit().createImage(url);
             ImageIcon icon = new ImageIcon(img);
-            mFile.add(new JMenuItem(nameItemFile[i],icon));
+            JMenuItem item = new JMenuItem(nameItemFile[i],icon);
+            mFile.add(item);
+            if(i == 1){
+                item.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        // exit current frame, just close one
+                        // if there are more than one frame
+//                        MyFrame.exitFrame();
+                    }
+                });
+            }
+            else {
+                item.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        MyFrame.newFrame();
+                    }
+                });
+            }
         }
+
 
 
 
