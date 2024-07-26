@@ -68,7 +68,7 @@ public class MyMenuBar extends JMenuBar {
         Image imgZoomIn = Toolkit.getDefaultToolkit().createImage(urlZoomIn);
         ImageIcon iconZoomIn = new ImageIcon(imgZoomIn);
         mView.add(itemZoomIn = new JMenuItem("Zoom In",iconZoomIn));
-
+        // ZoomOut: có chức năng
         URL urlZoomOut = MyMenuBar.class.getResource("/img/Zoom-Out-icon.png");
         Image imgZoomOut = Toolkit.getDefaultToolkit().createImage(urlZoomOut);
         ImageIcon iconZoomOut = new ImageIcon(imgZoomOut);

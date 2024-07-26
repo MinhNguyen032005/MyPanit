@@ -11,9 +11,9 @@ public class PanelBot extends JPanel {
         JLabel label1 = new JLabel("DRAWING................");
 
 
-        label1.setBackground(Color.lightGray);
+//        label1.setBackground(Color.lightGray);
 
-        panelBot.setBackground(Color.WHITE);
+//        panelBot.setBackground(Color.WHITE);
         panelBot.add(label1);
         add(panelBot);
     }

@@ -69,12 +69,12 @@ public class PanelTop extends JPanel {
 
         ChooseColor = new JPanel();
         JPanel container = new JPanel(new GridLayout(1, 2, 5, 5));
-        container.setBackground(Color.white);
+//        container.setBackground(Color.white);
         panelTop.add(container);
 
         panelTop.setSize(new Dimension(900, 200));
         ChooseColor.setSize(new Dimension(200, 200));
-        panelTop.setBackground(Color.WHITE);
+//        panelTop.setBackground(Color.WHITE);
         ChooseColor.setBackground(Color.yellow);
 
         ChooseColor.setSize(100, 200);

@@ -14,12 +14,11 @@ public class GreenPaint extends JFrame {
         setSize(850, 550);
         setLayout(new BorderLayout());
         setLocationRelativeTo(null);
-        setBackground(Color.WHITE);
+//        setBackground(Color.WHITE);
 
         bar = new MyMenuBar();
         this.setJMenuBar(bar);
-        //dung chua, may cai do dung ko
-        // them iml di
+
 
         URL urlTile = GreenPaint.class.getResource("/img/green.jpg");
         Image imgTi = Toolkit.getDefaultToolkit().createImage(urlTile);
