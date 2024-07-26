@@ -10,8 +10,8 @@ public class MyPanelTop extends JPanel {
     private JButton btnRedo, btnUndo, btnDelete, btnFill;
 
     public MyPanelTop() {
-        setLayout(new FlowLayout(FlowLayout.LEFT));
-        this.add(checkBox = new JCheckBox("Selected Mode"));
+        setLayout(new FlowLayout(FlowLayout.CENTER));
+
 
 //
         // add vao comboBox cac duong thang bieu thi dam nhat
