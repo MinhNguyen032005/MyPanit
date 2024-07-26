@@ -130,7 +130,7 @@ public class PanelLeft extends JPanel {
             blocks[i].setIcon(icons[i]);
         }
 
-        panelLeft.setBackground(Color.white);
+//        panelLeft.setBackground(Color.white);
         add(panelLeft);
     }
 }
