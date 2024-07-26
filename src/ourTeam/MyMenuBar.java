@@ -66,9 +66,10 @@ public class MyMenuBar extends JMenuBar {
         add(mView = new JMenu("View"));
         mView.setMnemonic('V');
         //them zoom in va zoom out vao mView
+
         String[] nameItemOfView = {"Zoom In","Zoom out"};
         String[] iconOfView = {"Zoom-In-icon.png","Zoom-Out-icon.png"};
-        for (int i = 0; i < nameItemFile.length; i++) {
+        for (int i = 0; i < nameItemOfView.length; i++) {
            URL url = MyMenuBar.class.getResource("/img/"+iconOfView[i]);
            Image img = Toolkit.getDefaultToolkit().createImage(url);
            ImageIcon icon = new ImageIcon(img);
