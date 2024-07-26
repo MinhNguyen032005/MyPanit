@@ -23,7 +23,7 @@ public class GreenPaint extends JFrame {
         URL urlTile = GreenPaint.class.getResource("/img/green.jpg");
         Image imgTi = Toolkit.getDefaultToolkit().createImage(urlTile);
         this.setIconImage(imgTi);
-
+//
         mainPanel = new MainPanel();
 
         getContentPane().add(mainPanel);
