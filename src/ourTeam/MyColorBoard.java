@@ -2,10 +2,13 @@ package ourTeam;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class MyColorBoard extends JPanel {
     private JButton Red,Green,Blue,Black,White,Pink,Yellow,Gray;
     private JPanel isSelectedColor,panelColor;
+    private Color selectedColor = Color.WHITE;
 
     public MyColorBoard() {
         setLayout(new GridLayout(1,2,5,5));
@@ -16,8 +19,16 @@ public class MyColorBoard extends JPanel {
         JButton[] btns = {Red,Green,Blue,Black,White,Pink,Yellow,Gray};
         Color[] colors = {Color.red,Color.green,Color.blue,Color.BLACK,Color.white,Color.pink,Color.yellow,Color.gray};
         for (int i = 0; i < btns.length; i++) {
+            int index = i;
             btns[i] = new JButton();
             btns[i].setBackground(colors[i]);
+            selectedColor = colors[index];
+            btns[i].addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    isSelectedColor.setBackground(colors[index]);
+                }
+            });
             panelColor.add(btns[i]);
         }
         this.add(panelColor);
