@@ -6,7 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MyPanelPaint extends JPanel {
-    private JScrollPane scrollPane;
+     JScrollPane scrollPane;
+     double scalefactor = 1.0 ;
 
     public MyPanelPaint() {
         scrollPane = new JScrollPane();
@@ -19,14 +20,37 @@ public class MyPanelPaint extends JPanel {
         add(scrollPane, BorderLayout.CENTER);
     }
 
-    class CustomPanel extends JPanel {
+    public void zoomIn() {
+        scalefactor *= 1.1 ;// Increase the scale factor by 10%
+        revalidate();
+        repaint();
+
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        Graphics2D g2d = (Graphics2D) g;
+        // Apply scaling
+        g2d.scale(scalefactor, scalefactor);
+        //Exmaple:  draw something for demonstration
+        g2d.fillRect(50, 50, 200, 200);
+    }
+
+
+    public   class CustomPanel extends JPanel {
         private final int SQUARE_SIZE = 20;
+        private double scaleFactor = 1.0 ;
 
         public CustomPanel() {
             setPreferredSize(new Dimension(1000, 1000));
-
-
         }
+        public  void zoomIn(){
+            scalefactor *= 1.1;// increase the scale factor by 10%
+            revalidate();
+            repaint();
+        }
+
         @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
@@ -40,10 +64,13 @@ public class MyPanelPaint extends JPanel {
                 }
             }
         }
-//
+
+
+
+
     }
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(800, 600);
+        return new Dimension((int) (800*scalefactor),(int) (600*scalefactor));
     }
 }

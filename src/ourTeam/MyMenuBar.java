@@ -8,15 +8,16 @@ import java.net.URL;
 
 //
 public class MyMenuBar extends JMenuBar {
-    private JMenu mFile, mEdit, mFotmat, mView, mColor;
-    private JMenuItem itemExit;
-    private JMenuItem itemColor, itemFill;
-    private JMenuItem itemMap, itemDefault, itemNew, itemZoomIn, itemZoomOut;
-    private JMenuItem Red, Green, Blue, Black, White, Pink, Yellow, Gray;
-    private JMenuItem[] containerItem;
-
+     JMenu mFile, mEdit, mFotmat, mView, mColor;
+     JMenuItem itemExit;
+     JMenuItem itemColor, itemFill;
+     JMenuItem itemMap, itemDefault, itemNew, itemZoomIn, itemZoomOut;
+     JMenuItem Red, Green, Blue, Black, White, Pink, Yellow, Gray;
+     JMenuItem[] containerItem;
+     MyPanelPaint panelPaint;
 
     public MyMenuBar() {
+        this.panelPaint = new MyPanelPaint();
         add(mFile = new JMenu("File"));
         mFile.setMnemonic('F');
         // them item vao menuFile.
@@ -73,20 +74,19 @@ public class MyMenuBar extends JMenuBar {
             mView.add(itemOfView[i]);
 
         }
+        // add actionListener cho item zoomIn
 
-
-    }
-
-
-    class suKienItemOfView implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            JMenuItem user = (JMenuItem) e.getSource();
-            if (user.equals(itemZoomIn)) {
-
+//        xu li cai nay
+        itemZoomIn = new JMenuItem("Zoom In");
+        itemZoomIn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                panelPaint.zoomIn();
             }
-        }
+        });
+
+
+
     }
 
 
