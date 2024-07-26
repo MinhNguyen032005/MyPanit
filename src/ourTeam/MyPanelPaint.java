@@ -1,21 +1,15 @@
-package myPaint;
+package ourTeam;
 
-import myPaint.shape.Oval;
-import myPaint.shape.Rhombus;
-import myPaint.shape.Square;
-import myPaint.shape.Triangle;
+
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
-public class ScrollPane extends JPanel {
+public class MyPanelPaint extends JPanel {
     private JScrollPane scrollPane;
 
-    public ScrollPane() {
+    public MyPanelPaint() {
         scrollPane = new JScrollPane();
-
         CustomPanel customPanel = new CustomPanel();
         customPanel.setBackground(Color.black);
         scrollPane = new JScrollPane(customPanel);
@@ -23,8 +17,6 @@ public class ScrollPane extends JPanel {
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         setLayout(new BorderLayout());
         add(scrollPane, BorderLayout.CENTER);
-
-
     }
 
     class CustomPanel extends JPanel {
@@ -35,7 +27,6 @@ public class ScrollPane extends JPanel {
 
 
         }
-
         @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
@@ -49,12 +40,10 @@ public class ScrollPane extends JPanel {
                 }
             }
         }
-        @Override
-        public Dimension getPreferredSize() {
-            return new Dimension(800, 600);
-        }
+//
     }
-
-
-
+    @Override
+    public Dimension getPreferredSize() {
+        return new Dimension(800, 600);
+    }
 }
