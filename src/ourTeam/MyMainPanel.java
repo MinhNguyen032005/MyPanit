@@ -10,7 +10,7 @@ public class MyMainPanel extends JPanel {
         MyPanelLeft panelLeft = new MyPanelLeft();
         MyPanelBot panelBot = new MyPanelBot();
         MyPanelPaint panelPaint = new MyPanelPaint();
-
+//
         this.add(panelTop, BorderLayout.NORTH);
         this.add(panelLeft, BorderLayout.WEST);
         this.add(panelBot, BorderLayout.SOUTH);

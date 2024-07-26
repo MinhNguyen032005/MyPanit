@@ -23,6 +23,6 @@ public class MyColorBoard extends JPanel {
         this.add(panelColor);
 
 
-
+//
     }
 }

@@ -17,6 +17,6 @@ public class MyPanelLeft extends JPanel {
             btns[i] = new JButton(icon);
             add(btns[i]);
         }
-
+//
     }
 }

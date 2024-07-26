@@ -13,7 +13,7 @@ public class MyPanelTop extends JPanel {
         setLayout(new FlowLayout(FlowLayout.LEFT));
         this.add(checkBox = new JCheckBox("Selected Mode"));
 
-
+//
         // add vao comboBox cac duong thang bieu thi dam nhat
         String[] nameIcons = {"icon_Line_Level1.png", "icon_Line_level2.png", "icon_Line_Level3.png"};
         comboBox = new JComboBox();

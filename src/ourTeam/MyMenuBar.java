@@ -3,7 +3,7 @@ package ourTeam;
 import javax.swing.*;
 import java.awt.*;
 import java.net.URL;
-
+//
 public class MyMenuBar extends JMenuBar {
     private JMenu mFile, mEdit, mFotmat, mView,mColor;
     private JMenuItem itemExit;

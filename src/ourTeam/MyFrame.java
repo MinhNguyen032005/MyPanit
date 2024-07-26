@@ -18,7 +18,7 @@ public class MyFrame extends JFrame {
         MyMainPanel mainPanel = new MyMainPanel();
 
 
-
+//
         this.setJMenuBar(menuBar);
         getContentPane().add(mainPanel);
         setResizable(false);

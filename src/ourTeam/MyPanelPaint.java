@@ -40,7 +40,7 @@ public class MyPanelPaint extends JPanel {
                 }
             }
         }
-
+//
     }
     @Override
     public Dimension getPreferredSize() {
