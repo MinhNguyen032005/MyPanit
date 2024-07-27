@@ -32,4 +32,8 @@ public class MyFrame extends JFrame {
     public static void newFrame() {
       new MyFrame();
     }
+
+    public static void closeFrame() {
+        System.exit(0);
+    }
 }
