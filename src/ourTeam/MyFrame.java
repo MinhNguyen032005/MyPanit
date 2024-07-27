@@ -2,11 +2,14 @@ package ourTeam;
 
 
 
+import controller.ActionWhenPaint;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class MyFrame extends JFrame {
-    public MyFrame() {
+    private MyMainPanel mainPanel;
+    public MyFrame(MyMainPanel mainPanel) {
         setTitle("Green Paint");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 550);
@@ -15,17 +18,19 @@ public class MyFrame extends JFrame {
 
 
         MyMenuBar menuBar = new MyMenuBar();
-        MyMainPanel mainPanel = new MyMainPanel();
+       this.mainPanel = mainPanel;
 
 
 //
-        this.setJMenuBar(menuBar);
+        this.setJMenuBar(menuBar); // day ne
         getContentPane().add(mainPanel);
         setResizable(false);
         setVisible(true);
     }
 
     public static void main(String[] args) {
-        new MyFrame();
+        new MyFrame(new MyMainPanel(new ActionWhenPaint()));
+
+
     }
 }
