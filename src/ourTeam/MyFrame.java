@@ -20,7 +20,7 @@ public class MyFrame extends JFrame {
         MyMenuBar menuBar = new MyMenuBar();
        this.mainPanel = mainPanel;
 
-
+//
 
         this.setJMenuBar(menuBar);
         getContentPane().add(mainPanel);

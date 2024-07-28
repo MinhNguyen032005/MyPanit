@@ -4,7 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import javax.imageio.ImageIO;
 
 //
 public class MyMenuBar extends JMenuBar {
@@ -29,65 +33,35 @@ public class MyMenuBar extends JMenuBar {
             Image img = Toolkit.getDefaultToolkit().createImage(url);
             ImageIcon icon = new ImageIcon(img);
             items[i] = new JMenuItem(nameItemFile[i], icon);
+            if (i == 1) {
+                items[i].addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        System.exit(0);
+                    }
+                });
+            }
+            // else is write code for itemSave, when click itemSave, it will save file to image.
+            else {
+//                BufferedImage image = new BufferedImage(panelPaint.getWidth(), panelPaint.getHeight(), BufferedImage.TYPE_INT_RGB);
+//                Graphics2D g2d = image.createGraphics();
+//                panelPaint.paint(g2d);
+//                g2d.dispose();
+//
+//                // Save file to image.
+//                try {
+//                    File outPutFile = new File("image.png");
+//                    ImageIO.write(image, "png", outPutFile);
+//                    JOptionPane.showMessageDialog(null, "Save file success");
+//
+//                } catch (IOException ex) {
+//                    ex.printStackTrace();
+//                    JOptionPane.showMessageDialog(null, "Error saving image: " + ex.getMessage());
+//                }
+            }
             mFile.add(items[i]);
         }
 
-
-//
-//
-//        add(mEdit = new JMenu("Edit"));
-//        mEdit.setMnemonic('E');
-//        mEdit.add(mColor = new JMenu("Color"));
-//        // them item cho mColor
-//        String[] itemMau = {"Red", "Green", "Blue", "Black", "White", "Pink", "Yellow", "Gray"};
-//        for (int i = 0; i < itemMau.length; i++) {
-//            mColor.add(new JMenuItem(itemMau[i]));
-//        }
-//        // them item fill vao Edit
-//        URL urlFill = MyMenuBar.class.getResource("/img/fill20_icon.png");
-//        Image imgFill = Toolkit.getDefaultToolkit().createImage(urlFill);
-//        ImageIcon iconFill = new ImageIcon(imgFill);
-//        mEdit.add(itemFill = new JMenuItem("Fill", iconFill));
-//
-//
-//        add(mFotmat = new JMenu("Fotmat"));
-//        mFotmat.setMnemonic('F');
-//        // add item Cho mFotmat
-//
-//        // dang luoi
-//        URL urlMap = MyMenuBar.class.getResource("/img/DangLuoi-icon.png");
-//        Image imgMap = Toolkit.getDefaultToolkit().createImage(urlMap);
-//        ImageIcon iconMap = new ImageIcon(imgMap);
-//        mFotmat.add(itemMap = new JMenuItem("Map", iconMap));
-//        // dang mac dinh
-//        mFotmat.add(itemDefault = new JMenuItem("Default"));
-//
-//
-//        add(mView = new JMenu("View"));
-//        mView.setMnemonic('V');
-//        //them zoom in va zoom out vao mView
-//
-//        String[] nameItemOfView = {"Zoom In", "Zoom out"};
-//        JMenuItem[] itemOfView = {itemZoomIn, itemZoomOut};
-//        String[] iconOfView = {"Zoom-In-icon.png", "Zoom-Out-icon.png"};
-//        for (int i = 0; i < itemOfView.length; i++) {
-//            URL url = MyMenuBar.class.getResource("/img/" + iconOfView[i]);
-//            Image img = Toolkit.getDefaultToolkit().createImage(url);
-//            ImageIcon icon = new ImageIcon(img);
-//            itemOfView[i] = new JMenuItem(nameItemOfView[i], icon);
-//            mView.add(itemOfView[i]);
-//
-//        }
-//        // add actionListener cho item zoomIn
-//
-////        xu li cai nay
-//        itemZoomIn = new JMenuItem("Zoom In");
-//        itemZoomIn.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                panelPaint.zoomIn();
-//            }
-//        });
 
 
     }
