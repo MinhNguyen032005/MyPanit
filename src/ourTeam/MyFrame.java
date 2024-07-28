@@ -17,10 +17,12 @@ public class MyFrame extends JFrame {
         setLocationRelativeTo(null);
 
 
-        MyMenuBar menuBar = new MyMenuBar();
        this.mainPanel = mainPanel;
-
+        MyMenuBar menuBar = new MyMenuBar(mainPanel.getPanelPaint());
 //
+        // Ensure panelPaint is properly sized
+        System.out.println("Panel width after frame is visible: " + mainPanel.getPanelPaint().getWidth());
+        System.out.println("Panel height after frame is visible: " + mainPanel.getPanelPaint().getHeight());
 
         this.setJMenuBar(menuBar);
         getContentPane().add(mainPanel);
@@ -30,7 +32,5 @@ public class MyFrame extends JFrame {
 
     public static void main(String[] args) {
         new MyFrame(new MyMainPanel(new ActionWhenPaint()));
-
-
     }
 }

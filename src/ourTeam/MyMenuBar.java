@@ -1,5 +1,6 @@
 package ourTeam;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -8,7 +9,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import javax.imageio.ImageIO;
 
 //
 public class MyMenuBar extends JMenuBar {
@@ -20,7 +20,7 @@ public class MyMenuBar extends JMenuBar {
     JMenuItem[] containerItem;
     MyPanelPaint panelPaint;
 
-    public MyMenuBar() {
+    public MyMenuBar(MyPanelPaint panelPaint) {
 
         add(mFile = new JMenu("File"));
         mFile.setMnemonic('F');
@@ -43,21 +43,23 @@ public class MyMenuBar extends JMenuBar {
             }
             // else is write code for itemSave, when click itemSave, it will save file to image.
             else {
-//                BufferedImage image = new BufferedImage(panelPaint.getWidth(), panelPaint.getHeight(), BufferedImage.TYPE_INT_RGB);
-//                Graphics2D g2d = image.createGraphics();
-//                panelPaint.paint(g2d);
-//                g2d.dispose();
-//
-//                // Save file to image.
-//                try {
-//                    File outPutFile = new File("image.png");
-//                    ImageIO.write(image, "png", outPutFile);
-//                    JOptionPane.showMessageDialog(null, "Save file success");
-//
-//                } catch (IOException ex) {
-//                    ex.printStackTrace();
-//                    JOptionPane.showMessageDialog(null, "Error saving image: " + ex.getMessage());
-//                }
+                System.out.println(panelPaint.getWidth());
+                System.out.println(panelPaint.getHeight());
+                BufferedImage image = new BufferedImage(panelPaint.getWidth(), panelPaint.getHeight(), BufferedImage.TYPE_INT_RGB);
+                Graphics2D g2d = image.createGraphics();
+                panelPaint.paint(g2d);
+                g2d.dispose();
+
+                // Save file to image.
+                try {
+                    File outPutFile = new File("image.png");
+                    ImageIO.write(image, "png", outPutFile);
+                    JOptionPane.showMessageDialog(null, "Save file success");
+
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Error saving image: " + ex.getMessage());
+                }
             }
             mFile.add(items[i]);
         }

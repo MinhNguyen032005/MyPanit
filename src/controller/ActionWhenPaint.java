@@ -40,7 +40,6 @@ public class ActionWhenPaint implements IController {
             @Override
             public void actionPerformed(ActionEvent e) {
                JButton jButton=(JButton) e.getSource();
-               System.out.println(jButton.getIcon());
             }
         };
     }

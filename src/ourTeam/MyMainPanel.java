@@ -7,13 +7,14 @@ import java.awt.*;
 
 public class MyMainPanel extends JPanel {
     IController iController;
+    MyPanelPaint panelPaint;
     public MyMainPanel(IController controller) {
         this.iController= controller;
         this.setLayout(new BorderLayout());
         MyPanelTop panelTop = new MyPanelTop(iController);
         MyPanelLeft panelLeft = new MyPanelLeft(iController);
         MyPanelBot panelBot = new MyPanelBot();
-        MyPanelPaint panelPaint = new MyPanelPaint(iController);
+        panelPaint = new MyPanelPaint(iController);
 //
         this.add(panelTop, BorderLayout.NORTH);
         this.add(panelLeft, BorderLayout.WEST);
@@ -22,5 +23,9 @@ public class MyMainPanel extends JPanel {
 
 
 
+    }
+
+    public MyPanelPaint getPanelPaint() {
+        return panelPaint;
     }
 }

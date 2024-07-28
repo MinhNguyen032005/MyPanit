@@ -9,7 +9,8 @@ import java.awt.event.MouseEvent;
 
 public class MyColorBoard extends JPanel {
     private JButton Red,Green,Blue,Black,White,Pink,Yellow,Gray;
-    private JPanel isSelectedColor,panelColor;
+    private  JPanel isSelectedColor;
+    private JPanel panelColor;
     private Color selectedColor = Color.WHITE;
     private IController controller;
 
