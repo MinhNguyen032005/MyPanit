@@ -76,8 +76,8 @@ public class ActionWhenPaint implements IController {
                             customPanel.getShapes().add(lastShape);
                             System.out.println(3);
                             break;
-                        case "SquareOval":
-                            lastShape = (new Square(new Point(e.getX(), e.getY())));
+                        case "Star":
+                            lastShape = (new Star(new Point(e.getX(), e.getY())));
                             customPanel.getShapes().add(lastShape);
                             System.out.println(4);
                             break;
@@ -113,7 +113,7 @@ public class ActionWhenPaint implements IController {
                 else if (string.equals("Oval")) titleShape = "Oval";
                 else if (string.equals("Rhombus")) titleShape = "Rhombus";
                 else if (string.equals("Triangle")) titleShape = "Triangle";
-                else if (string.equals("SquareOval")) titleShape = "SquareOval";
+                else if (string.equals("Star")) titleShape = "Star";
             }
         };
     }

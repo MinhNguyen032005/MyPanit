@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class MyPanelLeft extends JPanel {
     IController controller;
     JButton button;
-    private JButton btnLine, btnRec, btnOval, btnSQuare, btnEllipse, btnRhombus, btnTriangle, btnSquareOval;
+    private JButton btnLine, btnRec, btnOval, btnSQuare, btnEllipse, btnRhombus, btnTriangle, btnStar;
     ImageIcon icon;
     JButton[] btns;
 
@@ -18,7 +18,7 @@ public class MyPanelLeft extends JPanel {
     public MyPanelLeft(IController controller) {
         this.controller = controller;
         setLayout(new GridLayout(10, 1, 5, 5));
-        btns = new JButton[]{btnLine, btnRec, btnOval, btnSQuare, btnEllipse, btnRhombus, btnTriangle, btnSquareOval};
+        btns = new JButton[]{btnLine, btnRec, btnOval, btnSQuare, btnEllipse, btnRhombus, btnTriangle, btnStar};
         String[] nameIconsShape = {"newLine_icon.png", "icon_Rectangle.png", "oval-icon.png", "square-icon.png", "icon_ecllip.png", "rhombus-icon.png", "triangle-icon.png", "icon_tronV.png"};
         for (int i = 0; i < nameIconsShape.length; i++) {
             URL url = MyPanelLeft.class.getResource("/img/" + nameIconsShape[i]);
@@ -41,7 +41,7 @@ public class MyPanelLeft extends JPanel {
             } else if (btns[i].equals(btns[6])) {
                 button.setActionCommand("Triangle");
             } else if (btns[i].equals(btns[7])) {
-                button.setActionCommand("SquareOval");
+                button.setActionCommand("Star");
             }
             button.addActionListener(this.controller.selectButton());
             add(button);
