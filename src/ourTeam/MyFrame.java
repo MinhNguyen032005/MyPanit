@@ -29,8 +29,6 @@ public class MyFrame extends JFrame {
     }
 
     public static void main(String[] args) {
-        new MyFrame(new MyMainPanel(new ActionWhenPaint()));
-
-
+//        new MyFrame(new MyMainPanel(new ActionWhenPaint()));
     }
 }

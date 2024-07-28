@@ -16,6 +16,7 @@ public class Oval extends Shape{
         int x1,y1;
         x1=origin.x-radius;
         y1=origin.y-radius;
+        g.setColor(Color.BLACK);
         g.drawOval(x1,y1,radius*2,radius*2);
     }
 

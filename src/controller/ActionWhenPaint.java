@@ -16,7 +16,9 @@ public class ActionWhenPaint implements IController {
     private MyPanelLeft panelLeft;
     private MyColorBoard colorBoard;
     private MyPanelBot panelBot;
-    private MyPanelPaint panelPaint;
+//    private MyPanelPaint panelPaint;
+    private MyMainPanel myMainPanel;
+    private CustomPanel customPanel;
 
     Point pointStart;
     Point pointEnd;
@@ -26,16 +28,19 @@ public class ActionWhenPaint implements IController {
 
     public ActionWhenPaint() {
         panelLeft = new MyPanelLeft(this);
-        panelPaint=new MyPanelPaint(this);
+        customPanel = new CustomPanel(this);
+//        panelPaint = new MyPanelPaint(customPanel);
+        panelTop= new MyPanelTop(this);
+        myMainPanel= new MyMainPanel(panelLeft,customPanel,panelTop);
+        new MyFrame(myMainPanel);
     }
 
-// chuc nang ve
+    // chuc nang ve
     @Override
-    public MouseListener paintListener() {
+    public MouseAdapter paintListener() {
         return new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
                 if (e.getButton() == e.BUTTON1) {
                     start = true;
                 }
@@ -53,45 +58,47 @@ public class ActionWhenPaint implements IController {
                 } else {
                     start = false;
                     pointEnd = e.getPoint();
-                    panelPaint.repaint();
+//                    panelPaint.repaint();
+                    switch (titleShape) {
+                        case "Ellipse":
+                            lastShape = (new Oval(new Point(e.getX(), e.getY())));
+                            customPanel.getShapes().add(lastShape);
+                            System.out.println(1);
+                            break;
+                        case "Rhombus":
+                            lastShape = (new Rhombus(new Point(e.getX(), e.getY())));
+                            customPanel.getShapes().add(lastShape);
+                            System.out.println(2);
+                            break;
+                        case "Triangle":
+                            lastShape = (new Triangle(new Point(e.getX(), e.getY())));
+                            customPanel.getShapes().add(lastShape);
+                            System.out.println(3);
+                            break;
+                        case "SquareOval":
+                            lastShape = (new Square(new Point(e.getX(), e.getY())));
+                            customPanel.getShapes().add(lastShape);
+                            System.out.println(4);
+                            break;
+                    }
+                    System.out.println(customPanel.getShapes());
                 }
-                switch (titleShape) {
-                    case "Ellipse":
-                        lastShape=(new Oval(new Point(e.getX(), e.getY())));
-                        panelPaint.getShapes().add(lastShape);
-                        System.out.println(1);
-//                        System.out.println(panelPaint.getShapes());
-                        break;
-                    case "Rhombus":
-                        lastShape=(new Rhombus(new Point(e.getX(), e.getY())));
-                        panelPaint.getShapes().add(lastShape);
-                        System.out.println(2);
-                        break;
-                    case "Triangle":
-                        lastShape=(new Triangle(new Point(e.getX(), e.getY())));
-                        panelPaint.getShapes().add(lastShape);
-                        System.out.println(3);
-                        break;
-                    case "SquareOval":
-                        lastShape=(new Square(new Point(e.getX(), e.getY())));
-                        panelPaint.getShapes().add(lastShape);
-                        System.out.println(4);
-                        break;
-                }
-                panelPaint.repaint();
+//                panelPaint.repaint();
             }
 
             @Override
             public void mouseMoved(MouseEvent e) {
-                super.mouseMoved(e);
-                if (start) {
+//                super.mouseMoved(e);
+                if (start && lastShape != null) {
+//                    Shape s= panelPaint.getShapes().get(panelPaint.getShapes().size()-1);
                     lastShape.resize(new Point(e.getX(), e.getY()));
-                    panelPaint.repaint();
+                    customPanel.repaint();
                 }
             }
         };
     }
-// xu ly nut ben trai, cac nut hinh de ve
+
+    // xu ly nut ben trai, cac nut hinh de ve
     @Override
     public ActionListener selectButton() {
         return new ActionListener() {
@@ -110,5 +117,8 @@ public class ActionWhenPaint implements IController {
         };
     }
 
+    public static void main(String[] args) {
+        new ActionWhenPaint();
+    }
 
 }

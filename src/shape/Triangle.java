@@ -13,6 +13,7 @@ public class Triangle extends Shape{
     @Override
     public void draw(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
+        g.setColor(Color.BLACK);
 
         int[] xPoints = {origin.x, origin.x - point.x / 2, origin.x + point.x / 2};
         int[] yPoints = {origin.y - point.y / 2, origin.y + point.y / 2, origin.y + point.y / 2};

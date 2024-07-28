@@ -43,46 +43,10 @@ public class MyPanelLeft extends JPanel {
             } else if (btns[i].equals(btns[7])) {
                 button.setActionCommand("SquareOval");
             }
-            button.addActionListener(controller.selectButton());
+            button.addActionListener(this.controller.selectButton());
             add(button);
         }
 
 //
-    }
-
-    public JButton getBtnLine() {
-        return btnLine;
-    }
-
-    public JButton getBtnRec() {
-        return btnRec;
-    }
-
-    public JButton getBtnOval() {
-        return btnOval;
-    }
-
-    public JButton getBtnSQuare() {
-        return btnSQuare;
-    }
-
-    public JButton getBtnEllipse() {
-        return btnEllipse;
-    }
-
-    public JButton getBtnRhombus() {
-        return btnRhombus;
-    }
-
-    public JButton getBtnTriangle() {
-        return btnTriangle;
-    }
-
-    public JButton getBtnSquareOval() {
-        return btnSquareOval;
-    }
-
-    public JButton[] getBtns() {
-        return btns;
     }
 }
