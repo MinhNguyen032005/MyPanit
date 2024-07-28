@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class MyPanelLeft extends JPanel {
     IController controller;
     JButton button;
-    private JButton btnLine,btnRec,btnOval,btnSQuare,btnEllipse,btnRhombus,btnTriangle,btnSquareOval;
+    private JButton btnLine,btnRec,btnOval,btnSQuare,btnEllipse,btnRhombus,btnTriangle,btnSquareOval,btnHThang,btnSao;
     ImageIcon icon;
     ImageIcon icon1;
     ImageIcon[] iconArray;
@@ -18,9 +18,9 @@ public class MyPanelLeft extends JPanel {
 
     public MyPanelLeft(IController controller) {
         this.controller=controller;
-        setLayout(new GridLayout(10,1,5,5));
-        JButton[] btns = {btnLine,btnRec,btnOval,btnSQuare,btnEllipse,btnRhombus,btnTriangle,btnSquareOval};
-        String[] nameIconsShape = {"newLine_icon.png","icon_Rectangle.png","oval-icon.png","square-icon.png","icon_ecllip.png","rhombus-icon.png","triangle-icon.png","icon_tronV.png"};
+        setLayout(new GridLayout(12,1,5,5));
+        JButton[] btns = {btnLine,btnRec,btnOval,btnSQuare,btnEllipse,btnRhombus,btnTriangle,btnSquareOval,btnHThang,btnSao};
+        String[] nameIconsShape = {"newLine_icon.png","icon_Rectangle.png","oval-icon.png","square-icon.png","icon_ecllip.png","rhombus-icon.png","triangle-icon.png","icon_tronV.png","icon_thang.png","star-24-icon.png"};
         iconArray=new ImageIcon[btns.length];
         for (int i = 0; i < nameIconsShape.length; i++) {
             URL url = MyPanelLeft.class.getResource("/img/"+nameIconsShape[i]);

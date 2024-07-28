@@ -8,27 +8,31 @@ import java.net.URL;
 
 //
 public class MyMenuBar extends JMenuBar {
-     JMenu mFile, mEdit, mFotmat, mView, mColor;
-     JMenuItem itemExit;
-     JMenuItem itemColor, itemFill;
-     JMenuItem itemMap, itemDefault, itemNew, itemZoomIn, itemZoomOut;
-     JMenuItem Red, Green, Blue, Black, White, Pink, Yellow, Gray;
-     JMenuItem[] containerItem;
-     MyPanelPaint panelPaint;
+    JMenu mFile, mEdit, mFotmat, mView, mColor;
+    JMenuItem itemExit;
+    JMenuItem itemColor, itemFill;
+    JMenuItem itemMap, itemDefault, itemSave, itemZoomIn, itemZoomOut;
+    JMenuItem Red, Green, Blue, Black, White, Pink, Yellow, Gray;
+    JMenuItem[] containerItem;
+    MyPanelPaint panelPaint;
 
     public MyMenuBar() {
-//        this.panelPaint = new MyPanelPaint();
-//        add(mFile = new JMenu("File"));
-//        mFile.setMnemonic('F');
-//        // them item vao menuFile.
-//        String[] itemsFile = {"document-add-icon", "Users-Exit-icon"};
-//        String[] nameItemFile = {"new", "Exit"};
-//        for (int i = 0; i < itemsFile.length; i++) {
-//            URL url = MyMenuBar.class.getResource("/img/" + itemsFile[i] + ".png");
-//            Image img = Toolkit.getDefaultToolkit().createImage(url);
-//            ImageIcon icon = new ImageIcon(img);
-//            mFile.add(new JMenuItem(nameItemFile[i], icon));
-//        }
+
+        add(mFile = new JMenu("File"));
+        mFile.setMnemonic('F');
+        // them item vao menuFile.
+        String[] itemsFile = {"Save-icon", "Users-Exit-icon"};
+        String[] nameItemFile = {"Save", "Exit"};
+        JMenuItem[] items = {itemSave, itemExit};
+        for (int i = 0; i < itemsFile.length; i++) {
+            URL url = MyMenuBar.class.getResource("/img/" + itemsFile[i] + ".png");
+            Image img = Toolkit.getDefaultToolkit().createImage(url);
+            ImageIcon icon = new ImageIcon(img);
+            items[i] = new JMenuItem(nameItemFile[i], icon);
+            mFile.add(items[i]);
+        }
+
+
 //
 //
 //        add(mEdit = new JMenu("Edit"));
@@ -84,7 +88,6 @@ public class MyMenuBar extends JMenuBar {
 //                panelPaint.zoomIn();
 //            }
 //        });
-
 
 
     }
