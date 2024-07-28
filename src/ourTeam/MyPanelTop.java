@@ -9,16 +9,26 @@ import java.net.URL;
 public class MyPanelTop extends JPanel {
     private JCheckBox checkBox;
     private JComboBox comboBox;
-    private JButton btnRedo, btnUndo, btnDelete, btnFill;
+    private JButton btnRedo, btnUndo, btnDelete, btnFill, btnPencil;
     private IController controller;
     private MyColorBoard myColorBoard;
 
     public MyPanelTop(IController controller) {
-        this.controller=controller;
+        this.controller = controller;
         setLayout(new FlowLayout(FlowLayout.CENTER));
 
+// them button pencil
+        URL urlPencil = MyPanelTop.class.getResource("/img/pencil-icon.png");
+        Image imgPencil = Toolkit.getDefaultToolkit().createImage(urlPencil);
+        ImageIcon iconPencil = new ImageIcon(imgPencil);
+        btnPencil = new JButton(iconPencil);
+        this.add(btnPencil);
 
-//
+
+
+
+
+
         // add vao comboBox cac duong thang bieu thi dam nhat
         String[] nameIcons = {"icon_Line_Level1.png", "icon_Line_level2.png", "icon_Line_Level3.png"};
         comboBox = new JComboBox();
