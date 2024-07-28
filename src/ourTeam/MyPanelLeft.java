@@ -10,27 +10,39 @@ import java.util.Arrays;
 public class MyPanelLeft extends JPanel {
     IController controller;
     JButton button;
-    private JButton btnLine,btnRec,btnOval,btnSQuare,btnEllipse,btnRhombus,btnTriangle,btnSquareOval;
+    private JButton btnLine, btnRec, btnOval, btnSQuare, btnEllipse, btnRhombus, btnTriangle, btnSquareOval;
     ImageIcon icon;
-    ImageIcon icon1;
-    ImageIcon[] iconArray;
-    int x;
+    JButton[] btns;
+
 
     public MyPanelLeft(IController controller) {
-        this.controller=controller;
-        setLayout(new GridLayout(10,1,5,5));
-        JButton[] btns = {btnLine,btnRec,btnOval,btnSQuare,btnEllipse,btnRhombus,btnTriangle,btnSquareOval};
-        String[] nameIconsShape = {"newLine_icon.png","icon_Rectangle.png","oval-icon.png","square-icon.png","icon_ecllip.png","rhombus-icon.png","triangle-icon.png","icon_tronV.png"};
-        iconArray=new ImageIcon[btns.length];
+        this.controller = controller;
+        setLayout(new GridLayout(10, 1, 5, 5));
+        btns = new JButton[]{btnLine, btnRec, btnOval, btnSQuare, btnEllipse, btnRhombus, btnTriangle, btnSquareOval};
+        String[] nameIconsShape = {"newLine_icon.png", "icon_Rectangle.png", "oval-icon.png", "square-icon.png", "icon_ecllip.png", "rhombus-icon.png", "triangle-icon.png", "icon_tronV.png"};
         for (int i = 0; i < nameIconsShape.length; i++) {
-            URL url = MyPanelLeft.class.getResource("/img/"+nameIconsShape[i]);
+            URL url = MyPanelLeft.class.getResource("/img/" + nameIconsShape[i]);
             Image img = Toolkit.getDefaultToolkit().createImage(url);
             icon = new ImageIcon(img);
-            icon1=icon;
-            iconArray[i]=icon1;
-            button=new JButton();
-            btns[i] = new JButton(icon1);
-            button=btns[i];
+            btns[i] = new JButton(icon);
+            button = btns[i];
+            if (btns[i].equals(btns[0])) {
+                button.setActionCommand("Line");
+            } else if (btns[i].equals(btns[1])) {
+                button.setActionCommand("Rec");
+            } else if (btns[i].equals(btns[3])) {
+                button.setActionCommand("SQuare");
+            } else if (btns[i].equals(btns[4])) {
+                button.setActionCommand("Ellipse");
+            } else if (btns[i].equals(btns[2])) {
+                button.setActionCommand("Oval");
+            } else if (btns[i].equals(btns[5])) {
+                button.setActionCommand("Rhombus");
+            } else if (btns[i].equals(btns[6])) {
+                button.setActionCommand("Triangle");
+            } else if (btns[i].equals(btns[7])) {
+                button.setActionCommand("SquareOval");
+            }
             button.addActionListener(controller.selectButton());
             add(button);
         }
@@ -38,29 +50,39 @@ public class MyPanelLeft extends JPanel {
 //
     }
 
-
-    @Override
-    public int getX() {
-        return x;
-    }
-
-    public IController getController() {
-        return controller;
-    }
-
-    public JButton getButton() {
-        return button;
-    }
-
-    public ImageIcon getIcon() {
-        return icon;
-    }
-
     public JButton getBtnLine() {
         return btnLine;
     }
 
-    public ImageIcon[] getIconArray() {
-        return iconArray;
+    public JButton getBtnRec() {
+        return btnRec;
+    }
+
+    public JButton getBtnOval() {
+        return btnOval;
+    }
+
+    public JButton getBtnSQuare() {
+        return btnSQuare;
+    }
+
+    public JButton getBtnEllipse() {
+        return btnEllipse;
+    }
+
+    public JButton getBtnRhombus() {
+        return btnRhombus;
+    }
+
+    public JButton getBtnTriangle() {
+        return btnTriangle;
+    }
+
+    public JButton getBtnSquareOval() {
+        return btnSquareOval;
+    }
+
+    public JButton[] getBtns() {
+        return btns;
     }
 }
