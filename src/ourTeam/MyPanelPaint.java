@@ -2,16 +2,20 @@ package ourTeam;
 
 
 
+import controller.IController;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class MyPanelPaint extends JPanel {
      JScrollPane scrollPane;
      double scalefactor = 1.0 ;
+     private IController controller;
 
-    public MyPanelPaint() {
+    public MyPanelPaint(IController controller) {
+        this.controller= controller;
         scrollPane = new JScrollPane();
-        CustomPanel customPanel = new CustomPanel();
+        CustomPanel customPanel = new CustomPanel(controller);
         customPanel.setBackground(Color.black);
         scrollPane = new JScrollPane(customPanel);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
@@ -41,9 +45,13 @@ public class MyPanelPaint extends JPanel {
     public   class CustomPanel extends JPanel {
         private final int SQUARE_SIZE = 20;
         private double scaleFactor = 1.0 ;
-
-        public CustomPanel() {
+        private IController controller;
+        // them actionListener ne
+        public CustomPanel(IController controller) {
             setPreferredSize(new Dimension(1000, 1000));
+            this.controller=controller;
+            this.addMouseListener(this.controller.paintListener());
+
         }
         public  void zoomIn(){
             scalefactor *= 1.1;// increase the scale factor by 10%

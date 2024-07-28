@@ -1,5 +1,7 @@
 package ourTeam;
 
+import controller.IController;
+
 import javax.swing.*;
 import java.awt.*;
 import java.net.URL;
@@ -8,8 +10,11 @@ public class MyPanelTop extends JPanel {
     private JCheckBox checkBox;
     private JComboBox comboBox;
     private JButton btnRedo, btnUndo, btnDelete, btnFill;
+    private IController controller;
+    private MyColorBoard myColorBoard;
 
-    public MyPanelTop() {
+    public MyPanelTop(IController controller) {
+        this.controller=controller;
         setLayout(new FlowLayout(FlowLayout.CENTER));
 
 
@@ -28,8 +33,8 @@ public class MyPanelTop extends JPanel {
 
 
         // bang mau de chon
-        MyColorBoard colorBoard = new MyColorBoard();
-        this.add(colorBoard);
+        myColorBoard = new MyColorBoard(controller);
+        this.add(myColorBoard);
 
         // cac nut button
         String[] nameIcon = {"Arrows-Redo-icon.png", "Undo-icon.png", "remove_icon.png", "fill_icon.png"};

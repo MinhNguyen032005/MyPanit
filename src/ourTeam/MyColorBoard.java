@@ -1,5 +1,7 @@
 package ourTeam;
 
+import controller.IController;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -9,8 +11,10 @@ public class MyColorBoard extends JPanel {
     private JButton Red,Green,Blue,Black,White,Pink,Yellow,Gray;
     private JPanel isSelectedColor,panelColor;
     private Color selectedColor = Color.WHITE;
+    private IController controller;
 
-    public MyColorBoard() {
+    public MyColorBoard(IController controller) {
+        this.controller= controller;
         setLayout(new GridLayout(1,2,5,5));
         isSelectedColor = new JPanel();
         isSelectedColor.setBackground(Color.blue);
