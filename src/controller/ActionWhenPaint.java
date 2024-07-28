@@ -49,6 +49,7 @@ public class ActionWhenPaint implements IController {
                 }
             }
 
+
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
