@@ -1,5 +1,7 @@
 package ourTeam;
 
+import controller.IController;
+
 import javax.swing.*;
 import java.awt.*;
 import java.net.URL;
@@ -7,13 +9,26 @@ import java.net.URL;
 public class MyPanelTop extends JPanel {
     private JCheckBox checkBox;
     private JComboBox comboBox;
-    private JButton btnRedo, btnUndo, btnDelete, btnFill;
+    private JButton btnRedo, btnUndo, btnDelete, btnFill, btnPencil;
+    private IController controller;
+    private MyColorBoard myColorBoard;
 
-    public MyPanelTop() {
+    public MyPanelTop(IController controller) {
+        this.controller = controller;
         setLayout(new FlowLayout(FlowLayout.CENTER));
 
+// them button pencil
+        URL urlPencil = MyPanelTop.class.getResource("/img/pencil-icon.png");
+        Image imgPencil = Toolkit.getDefaultToolkit().createImage(urlPencil);
+        ImageIcon iconPencil = new ImageIcon(imgPencil);
+        btnPencil = new JButton(iconPencil);
+        this.add(btnPencil);
 
-//
+
+
+
+
+
         // add vao comboBox cac duong thang bieu thi dam nhat
         String[] nameIcons = {"icon_Line_Level1.png", "icon_Line_level2.png", "icon_Line_Level3.png"};
         comboBox = new JComboBox();
@@ -28,8 +43,8 @@ public class MyPanelTop extends JPanel {
 
 
         // bang mau de chon
-        MyColorBoard colorBoard = new MyColorBoard();
-        this.add(colorBoard);
+        myColorBoard = new MyColorBoard(controller);
+        this.add(myColorBoard);
 
         // cac nut button
         String[] nameIcon = {"Arrows-Redo-icon.png", "Undo-icon.png", "remove_icon.png", "fill_icon.png"};
