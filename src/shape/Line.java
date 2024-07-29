@@ -12,7 +12,7 @@ public class Line extends Shape {
 
     @Override
     public void draw(Graphics g) {
-        g.drawRect(origin.x, origin.y, second.x, second.y);
+        g.drawLine(origin.x, origin.y, second.x, second.y);
     }
 
     @Override

@@ -5,9 +5,9 @@ import java.awt.*;
 public class Ellipse extends Shape {
     Point point;
 
-    public Ellipse(Point origin, Point point) {
+    public Ellipse(Point origin) {
         super(origin);
-        this.point = point;
+        this.point = new Point(origin.x,origin.y);
     }
 
     @Override

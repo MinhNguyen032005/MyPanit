@@ -32,17 +32,21 @@ public class MyPanelLeft extends JPanel {
                 button.setActionCommand("Line");
             } else if (btns[i].equals(btns[1])) {
                 button.setActionCommand("Rec");
+            } else if (btns[i].equals(btns[2])) {
+                button.setActionCommand("Oval");
             } else if (btns[i].equals(btns[3])) {
                 button.setActionCommand("SQuare");
             } else if (btns[i].equals(btns[4])) {
                 button.setActionCommand("Ellipse");
-            } else if (btns[i].equals(btns[2])) {
-                button.setActionCommand("Oval");
             } else if (btns[i].equals(btns[5])) {
                 button.setActionCommand("Rhombus");
             } else if (btns[i].equals(btns[6])) {
                 button.setActionCommand("Triangle");
             } else if (btns[i].equals(btns[7])) {
+                button.setActionCommand("RoundedSquare");
+            }else if (btns[i].equals(btns[8])){
+                button.setActionCommand("Trapezoid");
+            }else if (btns[i].equals(btns[9])){
                 button.setActionCommand("Star");
             }
             button.addActionListener(this.controller.selectButton());

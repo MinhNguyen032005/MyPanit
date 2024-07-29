@@ -2,6 +2,7 @@ package controller;
 
 import ourTeam.*;
 import shape.*;
+import shape.Rectangle;
 import shape.Shape;
 
 import javax.swing.*;
@@ -62,24 +63,44 @@ public class ActionWhenPaint implements IController {
 //                    panelPaint.repaint();
                     switch (titleShape) {
                         case "Ellipse":
-                            lastShape = (new Oval(new Point(e.getX(), e.getY())));
+                            lastShape = (new Ellipse(new Point(e.getX(), e.getY())));
                             customPanel.getShapes().add(lastShape);
-                            System.out.println(1);
                             break;
                         case "Rhombus":
                             lastShape = (new Rhombus(new Point(e.getX(), e.getY())));
                             customPanel.getShapes().add(lastShape);
-                            System.out.println(2);
                             break;
                         case "Triangle":
                             lastShape = (new Triangle(new Point(e.getX(), e.getY())));
                             customPanel.getShapes().add(lastShape);
-                            System.out.println(3);
                             break;
                         case "Star":
                             lastShape = (new Star(new Point(e.getX(), e.getY())));
                             customPanel.getShapes().add(lastShape);
-                            System.out.println(4);
+                            break;
+                        case "Line":
+                            lastShape = (new Line(new Point(e.getX(),e.getY())));
+                            customPanel.getShapes().add(lastShape);
+                            break;
+                        case "Rec":
+                            lastShape = (new Rectangle(new Point(e.getX(),e.getY())));
+                            customPanel.getShapes().add(lastShape);
+                            break;
+                        case "Trapezoid":
+                            lastShape = (new Trapezoid(new Point(e.getX(),e.getY())));
+                            customPanel.getShapes().add(lastShape);
+                            break;
+                        case "RoundedSquare":
+                            lastShape = (new RoundedSquare(new Point(e.getX(),e.getY())));
+                            customPanel.getShapes().add(lastShape);
+                            break;
+                        case "SQuare":
+                            lastShape = (new Square(new Point(e.getX(),e.getY())));
+                            customPanel.getShapes().add(lastShape);
+                            break;
+                        case "Oval":
+                            lastShape = (new Oval(new Point(e.getX(),e.getY())));
+                            customPanel.getShapes().add(lastShape);
                             break;
                     }
                     System.out.println(customPanel.getShapes());
@@ -114,6 +135,8 @@ public class ActionWhenPaint implements IController {
                 else if (string.equals("Rhombus")) titleShape = "Rhombus";
                 else if (string.equals("Triangle")) titleShape = "Triangle";
                 else if (string.equals("Star")) titleShape = "Star";
+                else if (string.equals("Trapezoid")) titleShape="Trapezoid";
+                else if (string.equals("RoundedSquare")) titleShape="RoundedSquare";
             }
         };
     }
