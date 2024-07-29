@@ -12,6 +12,7 @@ public class Rhombus extends Shape{
     @Override
     public void draw(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
+        g.setColor(Color.BLACK);
 
         int[] xPoints = {origin.x, origin.x + second.x / 2, origin.x, origin.x - second.x / 2};
         int[] yPoints = {origin.y - second.y / 2, origin.y, origin.y + second.y / 2, origin.y};

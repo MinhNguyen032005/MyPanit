@@ -6,25 +6,23 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MyMainPanel extends JPanel {
-    IController iController;
-    MyPanelPaint panelPaint;
-    public MyMainPanel(IController controller) {
-        this.iController = controller;
+    MyPanelLeft panelLeft;
+    CustomPanel customPanel;
+    MyPanelTop panelTop;
+    public MyMainPanel(MyPanelLeft panelLeft, CustomPanel customPanel,MyPanelTop myPanelTop) {
         this.setLayout(new BorderLayout());
-        MyPanelTop panelTop = new MyPanelTop(iController);
-        MyPanelLeft panelLeft = new MyPanelLeft(iController);
+        this.panelLeft= panelLeft;
+        this.panelTop= myPanelTop;
         MyPanelBot panelBot = new MyPanelBot();
-        panelPaint = new MyPanelPaint(iController);
+        this.customPanel= customPanel;
+//        MyPanelPaint panelPaint = new MyPanelPaint(customPanel);
 //
         this.add(panelTop, BorderLayout.NORTH);
-        this.add(panelLeft, BorderLayout.WEST);
+        this.add(this.panelLeft, BorderLayout.WEST);
         this.add(panelBot, BorderLayout.SOUTH);
-        this.add(panelPaint, BorderLayout.CENTER);
+        this.add( this.customPanel, BorderLayout.CENTER);
+
+
+
     }
-
-    public MyPanelPaint getPanelPaint() {
-        return panelPaint;
-    }
-
-
 }

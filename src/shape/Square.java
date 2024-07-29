@@ -13,6 +13,7 @@ public class Square  extends Shape{
 
     @Override
     public void draw(Graphics g) {
+        g.setColor(Color.BLACK);
         int x = Math.min(origin.x, second.x);
         int w = Math.abs(origin.x - second.x);
         int y = Math.min(origin.y, second.y);
