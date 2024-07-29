@@ -1,10 +1,10 @@
-package myPaint.shape;
+package shape;
 
 import java.awt.*;
 
 public abstract class Shape {
     Point origin;
-
+//
 
     public Shape(Point origin) {
         this.origin = origin;

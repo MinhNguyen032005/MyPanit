@@ -1,4 +1,4 @@
-package myPaint.shape;
+package shape;
 
 import java.awt.*;
 
