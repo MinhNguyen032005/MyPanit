@@ -176,6 +176,8 @@ public class ActionWhenPaint implements IController {
         };
     }
 
+
+
     public static void main(String[] args) {
         new ActionWhenPaint();
     }
