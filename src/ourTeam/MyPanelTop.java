@@ -4,18 +4,23 @@ import controller.IController;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 import java.net.URL;
 
 public class MyPanelTop extends JPanel {
-    private JCheckBox checkBox;
-    private JComboBox comboBox;
-    private JButton btnRedo, btnUndo, btnDelete, btnFill, btnPencil;
-    private IController controller;
-    private MyColorBoard myColorBoard;
+    JCheckBox checkBox;
+    JComboBox comboBox;
+    JButton btnRedo, btnUndo, btnDelete, btnFill, btnPencil;
+    IController controller;
+    MyColorBoard myColorBoard;
+//    JButton button;
+
 
     public MyPanelTop(IController controller) {
         this.controller = controller;
+//        shapes = new ArrayList<Shape>();
         setLayout(new FlowLayout(FlowLayout.CENTER));
+
 
 // them button pencil
         URL urlPencil = MyPanelTop.class.getResource("/img/pencil-icon.png");
@@ -23,10 +28,6 @@ public class MyPanelTop extends JPanel {
         ImageIcon iconPencil = new ImageIcon(imgPencil);
         btnPencil = new JButton(iconPencil);
         this.add(btnPencil);
-
-
-
-
 
 
         // add vao comboBox cac duong thang bieu thi dam nhat
@@ -55,7 +56,18 @@ public class MyPanelTop extends JPanel {
             ImageIcon icon = new ImageIcon(img);
             btns[i] = new JButton();
             btns[i].setIcon(icon);
+
             this.add(btns[i]);
         }
+        btns[2].addActionListener(controller.buttonDelete());
+
     }
+
+    public JButton getBtnRedo() {
+        return btnRedo;
+    }
+    public JButton getBtnDelete(){
+        return btnDelete;
+    }
+
 }

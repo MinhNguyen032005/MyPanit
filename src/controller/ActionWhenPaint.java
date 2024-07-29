@@ -141,6 +141,17 @@ public class ActionWhenPaint implements IController {
         };
     }
 
+    @Override
+    public ActionListener buttonDelete() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                customPanel.getShapes().clear();
+                customPanel.repaint();
+            }
+        };
+    }
+
     public static void main(String[] args) {
         new ActionWhenPaint();
     }

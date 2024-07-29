@@ -7,4 +7,6 @@ import java.awt.event.MouseListener;
 public interface IController {
     MouseAdapter paintListener();
     ActionListener selectButton();
+
+    ActionListener buttonDelete();
 }
