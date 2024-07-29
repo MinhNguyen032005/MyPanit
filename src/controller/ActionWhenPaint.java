@@ -163,7 +163,7 @@ public class ActionWhenPaint implements IController {
                     Shape shapeToUndo = shapes.remove(shapes.size() - 1);
                     undoStack.add(shapeToUndo);
                     redoStack.add(shapeToUndo); // Optionally add to redo stack for redo functionality
-                    customPanel.repaint();
+                    customPanel.repaint();//
                 }
             }
         };

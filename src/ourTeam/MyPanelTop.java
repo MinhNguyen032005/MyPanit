@@ -59,7 +59,7 @@ public class MyPanelTop extends JPanel {
 
             this.add(btns[i]);
         }
-        btns[0].addActionListener(controller.undoButtonListener());
+        btns[0].addActionListener(controller.undoButtonListener());///
         btns[1].addActionListener(controller.redoButton());
         btns[2].addActionListener(controller.buttonDelete());
 
