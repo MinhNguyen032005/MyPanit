@@ -11,12 +11,19 @@ public class MyPanelPaint extends JPanel {
      JScrollPane scrollPane;
      double scalefactor = 1.0 ;
      private IController controller;
+     //cái sân banh để vẽ
+    private JPanel customPanel;
+
+    public JPanel getCustomPanel() {
+        return customPanel;
+    }
 
     public MyPanelPaint(IController controller) {
         this.controller= controller;
         scrollPane = new JScrollPane();
-        CustomPanel customPanel = new CustomPanel(controller);
+        customPanel = new CustomPanel(controller);
         customPanel.setBackground(Color.black);
+
         scrollPane = new JScrollPane(customPanel);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
@@ -39,6 +46,7 @@ public class MyPanelPaint extends JPanel {
         g2d.scale(scalefactor, scalefactor);
         //Exmaple:  draw something for demonstration
         g2d.fillRect(50, 50, 200, 200);
+
     }
 
 
