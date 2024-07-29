@@ -5,7 +5,7 @@ import java.awt.*;
 public class RoundedSquare extends Shape {
     Point second;
 
-    public RoundedSquare(Point origin, Point second) {
+    public RoundedSquare(Point origin) {
         super(origin);
         this.second = new Point(origin.x, origin.y);
     }
