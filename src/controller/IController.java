@@ -14,4 +14,5 @@ public interface IController {
 
     ActionListener redoButton();
 
+    ActionListener selectButtonColor();
 }

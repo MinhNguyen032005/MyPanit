@@ -48,8 +48,8 @@ public class MyPanelTop extends JPanel {
         this.add(myColorBoard);
 
         // cac nut button
-        String[] nameIcon = {"Arrows-Redo-icon.png", "Undo-icon.png", "remove_icon.png", "fill_icon.png"};
-        JButton[] btns = {btnRedo, btnUndo, btnDelete, btnFill};
+        String[] nameIcon = { "Undo-icon.png","Arrows-Redo-icon.png", "remove_icon.png", "fill_icon.png"};
+        JButton[] btns = { btnUndo, btnRedo,btnDelete, btnFill};
         for (int i = 0; i < nameIcon.length; i++) {
             URL url = MyPanelTop.class.getResource("/img/" + nameIcon[i]);
             Image img = Toolkit.getDefaultToolkit().createImage(url);

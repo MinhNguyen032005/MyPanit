@@ -26,6 +26,7 @@ public class ActionWhenPaint implements IController {
     boolean start;
     String titleShape;
     shape.Shape lastShape;
+    String titleColor;
 
     private ArrayList<Shape> undoStack = new ArrayList<>();
     private ArrayList<Shape> redoStack = new ArrayList<>();
@@ -183,6 +184,16 @@ public class ActionWhenPaint implements IController {
                     undoStack.add(shapeToRedo); // Optionally add to undo stack for future undo functionality
                     customPanel.repaint();
                 }
+            }
+        };
+    }
+
+    @Override
+    public ActionListener selectButtonColor() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                titleColor=e.getActionCommand();
             }
         };
     }
