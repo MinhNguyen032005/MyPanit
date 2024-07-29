@@ -1,5 +1,8 @@
 package ourTeam;
 
+import controller.SaveActionController;
+import controller.SaveImageController;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,9 +18,15 @@ public class MyMenuBar extends JMenuBar {
     JMenuItem Red, Green, Blue, Black, White, Pink, Yellow, Gray;
     JMenuItem[] containerItem;
     MyPanelPaint panelPaint;
+    private final int SAVE = 0;
+    private JPanel drawingPanel = new JPanel() ;
+    private SaveActionController saveActionController;
+
+    public void setDrawingPanel(JPanel drawingPanel) {
+        this.drawingPanel = drawingPanel;
+    }
 
     public MyMenuBar() {
-
         add(mFile = new JMenu("File"));
         mFile.setMnemonic('F');
         // them item vao menuFile.
@@ -31,6 +40,12 @@ public class MyMenuBar extends JMenuBar {
             items[i] = new JMenuItem(nameItemFile[i], icon);
             mFile.add(items[i]);
         }
+
+        saveActionController = new SaveActionController();
+        saveActionController.setDrawingPanel(drawingPanel);
+        items[SAVE].addActionListener(saveActionController);
+
+
 
 
 //
