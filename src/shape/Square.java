@@ -4,11 +4,12 @@ import java.awt.*;
 
 public class Square  extends Shape{
     Point second;
+    Color color;
 
-
-    public Square(Point origin) {
-        super(origin);
-        this.second = new Point(origin.x,origin.y);
+    public Square(Point origin, Color color) {
+        super(origin, color);
+        second=new Point(origin.x,origin.y);
+        this.color = color;
     }
 
     @Override
@@ -18,6 +19,7 @@ public class Square  extends Shape{
         int w = Math.abs(origin.x - second.x);
         int y = Math.min(origin.y, second.y);
         int h = Math.abs(origin.y - second.y);
+        g.setColor(color);
         g.drawRect(x, y, w, h);
     }
 

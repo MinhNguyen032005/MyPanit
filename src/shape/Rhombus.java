@@ -4,15 +4,18 @@ import java.awt.*;
 
 public class Rhombus extends Shape{
     Point second;
-    public Rhombus(Point origin) {
-        super(origin);
+   Color color;
+
+    public Rhombus(Point origin, Color color) {
+        super(origin, color);
         second=new Point(origin.x,origin.y);
+        this.color=color;
     }
 
     @Override
     public void draw(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.BLACK);
+        g.setColor(color);
 
         int[] xPoints = {origin.x, origin.x + second.x / 2, origin.x, origin.x - second.x / 2};
         int[] yPoints = {origin.y - second.y / 2, origin.y, origin.y + second.y / 2, origin.y};

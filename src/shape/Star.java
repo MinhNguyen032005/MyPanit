@@ -4,15 +4,17 @@ import java.awt.*;
 
 public class Star extends Shape{
         Point second;
+        Color color;
 
-        public Star(Point origin) {
-            super(origin);
-            this.second = new Point(origin.x, origin.y);
-        }
+    public Star(Point origin, Color color ) {
+        super(origin, color);
+        second=new Point(origin.x,origin.y);
+        this.color = color;
+    }
 
-        @Override
+    @Override
         public void draw(Graphics g) {
-            g.setColor(Color.BLACK);
+            g.setColor(color);
 
             // Calculate the radius based on the distance between origin and second
             int radius = (int) origin.distance(second);

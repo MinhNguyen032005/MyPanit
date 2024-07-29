@@ -9,4 +9,5 @@ public interface IController {
     ActionListener selectButton();
 
     ActionListener buttonDelete();
+    ActionListener selectButtonColor();
 }

@@ -26,6 +26,7 @@ public class ActionWhenPaint implements IController {
     boolean start;
     String titleShape;
     shape.Shape lastShape;
+    String titleColor;
 
     public ActionWhenPaint() {
         panelLeft = new MyPanelLeft(this);
@@ -148,6 +149,16 @@ public class ActionWhenPaint implements IController {
             public void actionPerformed(ActionEvent e) {
                 customPanel.getShapes().clear();
                 customPanel.repaint();
+            }
+        };
+    }
+
+    @Override
+    public ActionListener selectButtonColor() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                titleColor=e.getActionCommand();
             }
         };
     }

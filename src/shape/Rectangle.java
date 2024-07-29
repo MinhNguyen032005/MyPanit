@@ -5,11 +5,13 @@ import java.awt.*;
 public class Rectangle extends  Shape{
     int width;
     int height;
+    Color color;
 
-    public Rectangle(Point origin) {
-        super(origin);
+    public Rectangle(Point origin, Color color) {
+        super(origin, color);
         this.width = 0;
         this.height = 0;
+        this.color = color;
     }
 
     @Override
@@ -17,6 +19,7 @@ public class Rectangle extends  Shape{
         int x1, y1;
         x1 = origin.x;
         y1 = origin.y;
+        g.setColor(color);
         g.drawRect(x1, y1, width, height);
     }
 
