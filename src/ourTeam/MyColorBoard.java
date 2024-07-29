@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 public class MyColorBoard extends JPanel {
     JButton Red,Green,Blue,Black,White,Pink,Yellow,Gray;
     JPanel isSelectedColor,panelColor;
+    Color selectColor;
     IController controller;
     JButton button;
 
@@ -30,10 +31,24 @@ public class MyColorBoard extends JPanel {
             button = btns[i];
             button.setActionCommand(str[i]);
             button.addActionListener(controller.selectButtonColor());
-            panelColor.add(btns[i]);
+            button.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    selectColor=colors[index];
+                    isSelectedColor.setBackground(selectColor);
+                }
+            });
+            panelColor.add(button);
         }
         this.add(panelColor);
     }
 
+    public JPanel getIsSelectedColor() {
+        return isSelectedColor;
+    }
+
+    public JPanel getPanelColor() {
+        return panelColor;
+    }
 
 }

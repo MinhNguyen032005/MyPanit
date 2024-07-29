@@ -17,7 +17,6 @@ public class ActionWhenPaint implements IController {
     private MyPanelLeft panelLeft;
     private MyColorBoard colorBoard;
     private MyPanelBot panelBot;
-//    private MyPanelPaint panelPaint;
     private MyMainPanel myMainPanel;
     private CustomPanel customPanel;
 
@@ -27,13 +26,13 @@ public class ActionWhenPaint implements IController {
     String titleShape;
     shape.Shape lastShape;
     String titleColor;
+    Color color;
 
     public ActionWhenPaint() {
         panelLeft = new MyPanelLeft(this);
         customPanel = new CustomPanel(this);
-//        panelPaint = new MyPanelPaint(customPanel);
-        panelTop= new MyPanelTop(this);
-        myMainPanel= new MyMainPanel(panelLeft,customPanel,panelTop);
+        panelTop = new MyPanelTop(this);
+        myMainPanel = new MyMainPanel(panelLeft, customPanel, panelTop);
         new MyFrame(myMainPanel);
     }
 
@@ -64,56 +63,53 @@ public class ActionWhenPaint implements IController {
 //                    panelPaint.repaint();
                     switch (titleShape) {
                         case "Ellipse":
-                            lastShape = (new Ellipse(new Point(e.getX(), e.getY())));
+                            lastShape = (new Ellipse(new Point(e.getX(), e.getY()),color));
                             customPanel.getShapes().add(lastShape);
                             break;
                         case "Rhombus":
-                            lastShape = (new Rhombus(new Point(e.getX(), e.getY())));
+                            lastShape = (new Rhombus(new Point(e.getX(), e.getY()),color));
                             customPanel.getShapes().add(lastShape);
                             break;
                         case "Triangle":
-                            lastShape = (new Triangle(new Point(e.getX(), e.getY())));
+                            lastShape = (new Triangle(new Point(e.getX(), e.getY()),color));
                             customPanel.getShapes().add(lastShape);
                             break;
                         case "Star":
-                            lastShape = (new Star(new Point(e.getX(), e.getY())));
+                            lastShape = (new Star(new Point(e.getX(), e.getY()),color));
                             customPanel.getShapes().add(lastShape);
                             break;
                         case "Line":
-                            lastShape = (new Line(new Point(e.getX(),e.getY())));
+                            lastShape = (new Line(new Point(e.getX(), e.getY()),color));
                             customPanel.getShapes().add(lastShape);
                             break;
                         case "Rec":
-                            lastShape = (new Rectangle(new Point(e.getX(),e.getY())));
+                            lastShape = (new Rectangle(new Point(e.getX(), e.getY()),color));
                             customPanel.getShapes().add(lastShape);
                             break;
                         case "Trapezoid":
-                            lastShape = (new Trapezoid(new Point(e.getX(),e.getY())));
+                            lastShape = (new Trapezoid(new Point(e.getX(), e.getY()),color));
                             customPanel.getShapes().add(lastShape);
                             break;
                         case "RoundedSquare":
-                            lastShape = (new RoundedSquare(new Point(e.getX(),e.getY())));
+                            lastShape = (new RoundedSquare(new Point(e.getX(), e.getY()),color));
                             customPanel.getShapes().add(lastShape);
                             break;
                         case "SQuare":
-                            lastShape = (new Square(new Point(e.getX(),e.getY())));
+                            lastShape = (new Square(new Point(e.getX(), e.getY()),color));
                             customPanel.getShapes().add(lastShape);
                             break;
                         case "Oval":
-                            lastShape = (new Oval(new Point(e.getX(),e.getY())));
+                            lastShape = (new Oval(new Point(e.getX(), e.getY()),color));
                             customPanel.getShapes().add(lastShape);
                             break;
                     }
                     System.out.println(customPanel.getShapes());
                 }
-//                panelPaint.repaint();
             }
 
             @Override
             public void mouseMoved(MouseEvent e) {
-//                super.mouseMoved(e);
                 if (start && lastShape != null) {
-//                    Shape s= panelPaint.getShapes().get(panelPaint.getShapes().size()-1);
                     lastShape.resize(new Point(e.getX(), e.getY()));
                     customPanel.repaint();
                 }
@@ -136,8 +132,8 @@ public class ActionWhenPaint implements IController {
                 else if (string.equals("Rhombus")) titleShape = "Rhombus";
                 else if (string.equals("Triangle")) titleShape = "Triangle";
                 else if (string.equals("Star")) titleShape = "Star";
-                else if (string.equals("Trapezoid")) titleShape="Trapezoid";
-                else if (string.equals("RoundedSquare")) titleShape="RoundedSquare";
+                else if (string.equals("Trapezoid")) titleShape = "Trapezoid";
+                else if (string.equals("RoundedSquare")) titleShape = "RoundedSquare";
             }
         };
     }
@@ -158,10 +154,29 @@ public class ActionWhenPaint implements IController {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                titleColor=e.getActionCommand();
+                titleColor = e.getActionCommand();
+                if (titleColor.equals("Red")) {
+                    color = Color.red;
+                } else if (titleColor.equals("Green")) {
+                    color = Color.green;
+                } else if (titleColor.equals("Blue")) {
+                    color = Color.blue;
+                } else if (titleColor.equals("Black")) {
+                    color = Color.BLACK;
+                } else if (titleColor.equals("White")) {
+                    color = Color.white;
+                } else if (titleColor.equals("Pink")) {
+                    color = Color.pink;
+                } else if (titleColor.equals("Gray")) {
+                    color = Color.gray;
+                } else if (titleColor.equals("Yellow")) {
+                    color = Color.yellow;
+                }
             }
         };
     }
+
+
 
     public static void main(String[] args) {
         new ActionWhenPaint();
