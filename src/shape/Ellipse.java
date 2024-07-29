@@ -5,9 +5,10 @@ import java.awt.*;
 public class Ellipse extends Shape {
     Point point;
 
-    public Ellipse(Point origin) {
-        super(origin);
+    public Ellipse(Point origin, Color color) {
+        super(origin, color);
         this.point = new Point(origin.x,origin.y);
+        this.color=color;
     }
 
     @Override
@@ -18,7 +19,7 @@ public class Ellipse extends Shape {
         int y = Math.min(origin.y, point.y);
         int width = Math.abs(origin.x - point.x);
         int height = Math.abs(origin.y - point.y);
-
+        g2d.setColor(color);
         g2d.drawOval(x, y, width, height);
     }
 

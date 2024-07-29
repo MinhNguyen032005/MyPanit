@@ -29,6 +29,7 @@ public class MyColorBoard extends JPanel {
             btns[i].setBackground(colors[i]);
             button = btns[i];
             button.setActionCommand(str[i]);
+            button.addActionListener(controller.selectButtonColor());
             panelColor.add(btns[i]);
         }
         this.add(panelColor);
