@@ -27,6 +27,10 @@ public class ActionWhenPaint implements IController {
     String titleShape;
     shape.Shape lastShape;
 
+    private ArrayList<Shape> undoStack = new ArrayList<>();
+    private ArrayList<Shape> redoStack = new ArrayList<>();
+
+
     public ActionWhenPaint() {
         panelLeft = new MyPanelLeft(this);
         customPanel = new CustomPanel(this);
@@ -148,6 +152,37 @@ public class ActionWhenPaint implements IController {
             public void actionPerformed(ActionEvent e) {
                 customPanel.getShapes().clear();
                 customPanel.repaint();
+            }
+        };
+    }
+
+    @Override
+    public ActionListener undoButtonListener() {
+        return  new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ArrayList<Shape> shapes = customPanel.getShapes();
+                if (!shapes.isEmpty()) {
+                    Shape shapeToUndo = shapes.remove(shapes.size() - 1);
+                    undoStack.add(shapeToUndo);
+                    redoStack.add(shapeToUndo); // Optionally add to redo stack for redo functionality
+                    customPanel.repaint();
+                }
+            }
+        };
+    }
+
+    @Override
+    public ActionListener redoButton() {
+        return  new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!redoStack.isEmpty()) {
+                    Shape shapeToRedo = redoStack.remove(redoStack.size() - 1);
+                    customPanel.getShapes().add(shapeToRedo);
+                    undoStack.add(shapeToRedo); // Optionally add to undo stack for future undo functionality
+                    customPanel.repaint();
+                }
             }
         };
     }
