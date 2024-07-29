@@ -14,4 +14,5 @@ public class MyPanelBot extends JPanel {
         this.add(label= new JLabel("DRAWING........."));
     }
 //
+    ////aNH mINH
 }
