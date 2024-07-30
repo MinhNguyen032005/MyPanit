@@ -17,7 +17,6 @@ public class MyMenuBar extends JMenuBar {
     JMenuItem itemMap, itemDefault, itemSave, itemZoomIn, itemZoomOut;
     JMenuItem Red, Green, Blue, Black, White, Pink, Yellow, Gray;
     JMenuItem[] containerItem;
-    MyPanelPaint panelPaint;
     private final int SAVE = 0;
     private JPanel drawingPanel = new JPanel() ;
     private SaveActionController saveActionController;
