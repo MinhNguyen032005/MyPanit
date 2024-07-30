@@ -7,8 +7,8 @@ public class Ellipse extends Shape {
 
     public Ellipse(Point origin, Color color) {
         super(origin, color);
-        this.point = new Point(origin.x,origin.y);
-        this.color=color;
+        this.point = new Point(origin.x, origin.y);
+        this.color = color;
     }
 
     @Override

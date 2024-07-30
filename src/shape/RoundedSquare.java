@@ -8,7 +8,7 @@ public class RoundedSquare extends Shape {
 
     public RoundedSquare(Point origin, Color color) {
         super(origin, color);
-        second=new Point(origin.x,origin.y);
+        second = new Point(origin.x, origin.y);
         this.color = color;
     }
 

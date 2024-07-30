@@ -2,13 +2,13 @@ package shape;
 
 import java.awt.*;
 
-public class Square  extends Shape{
+public class Square extends Shape {
     Point second;
     Color color;
 
     public Square(Point origin, Color color) {
         super(origin, color);
-        second=new Point(origin.x,origin.y);
+        second = new Point(origin.x, origin.y);
         this.color = color;
     }
 
@@ -25,6 +25,6 @@ public class Square  extends Shape{
 
     @Override
     public void resize(Point point) {
-        this.second=point;
+        this.second = point;
     }
 }
