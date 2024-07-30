@@ -54,14 +54,6 @@ public class CustomPanel extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         setBackground(Color.YELLOW);
-//            int width = getWidth();
-//            int height = getHeight();
-//
-//            for (int x = 0; x < width; x += SQUARE_SIZE) {
-//                for (int y = 0; y < height; y += SQUARE_SIZE) {
-//                    g.drawRect(x, y, SQUARE_SIZE, SQUARE_SIZE);
-//                }
-//            }
         for (Shape shape : shapes) {
             shape.draw(g);
         }

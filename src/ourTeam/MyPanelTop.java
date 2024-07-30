@@ -18,9 +18,7 @@ public class MyPanelTop extends JPanel {
 
     public MyPanelTop(IController controller) {
         this.controller = controller;
-//        shapes = new ArrayList<Shape>();
         setLayout(new FlowLayout(FlowLayout.CENTER));
-
 
 // them button pencil
         URL urlPencil = MyPanelTop.class.getResource("/img/pencil-icon.png");
@@ -48,8 +46,8 @@ public class MyPanelTop extends JPanel {
         this.add(myColorBoard);
 
         // cac nut button
-        String[] nameIcon = { "Undo-icon.png","Arrows-Redo-icon.png", "remove_icon.png", "fill_icon.png"};
-        JButton[] btns = { btnUndo, btnRedo,btnDelete, btnFill};
+        String[] nameIcon = {"Undo-icon.png", "Arrows-Redo-icon.png", "remove_icon.png", "fill_icon.png"};
+        JButton[] btns = {btnUndo, btnRedo, btnDelete, btnFill};
         for (int i = 0; i < nameIcon.length; i++) {
             URL url = MyPanelTop.class.getResource("/img/" + nameIcon[i]);
             Image img = Toolkit.getDefaultToolkit().createImage(url);
@@ -59,7 +57,7 @@ public class MyPanelTop extends JPanel {
 
             this.add(btns[i]);
         }
-        btns[0].addActionListener(controller.undoButtonListener());///
+        btns[0].addActionListener(controller.undoButtonListener());
         btns[1].addActionListener(controller.redoButton());
         btns[2].addActionListener(controller.buttonDelete());
 
@@ -68,7 +66,8 @@ public class MyPanelTop extends JPanel {
     public JButton getBtnRedo() {
         return btnRedo;
     }
-    public JButton getBtnDelete(){
+
+    public JButton getBtnDelete() {
         return btnDelete;
     }
 

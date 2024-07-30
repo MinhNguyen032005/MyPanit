@@ -48,8 +48,6 @@ public class MyMenuBar extends JMenuBar {
 
 
 
-//
-//
 //        add(mEdit = new JMenu("Edit"));
 //        mEdit.setMnemonic('E');
 //        mEdit.add(mColor = new JMenu("Color"));

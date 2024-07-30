@@ -13,7 +13,7 @@ public class Trapezoid extends Shape {
         this.second = new Point(origin.x + 50, origin.y);
         this.third = new Point(origin.x + 30, origin.y + 50);
         this.fourth = new Point(origin.x - 30, origin.y + 50);
-        this.color=color;
+        this.color = color;
     }
 
     @Override

@@ -2,14 +2,14 @@ package shape;
 
 import java.awt.*;
 
-public class Rhombus extends Shape{
+public class Rhombus extends Shape {
     Point second;
-   Color color;
+    Color color;
 
     public Rhombus(Point origin, Color color) {
         super(origin, color);
-        second=new Point(origin.x,origin.y);
-        this.color=color;
+        second = new Point(origin.x, origin.y);
+        this.color = color;
     }
 
     @Override
@@ -25,7 +25,7 @@ public class Rhombus extends Shape{
 
     @Override
     public void resize(Point newPoint) {
-        this.second.x= Math.abs(newPoint.x - origin.x) * 2;
-        this.second.y= Math.abs(newPoint.y - origin.y) * 2;
+        this.second.x = Math.abs(newPoint.x - origin.x) * 2;
+        this.second.y = Math.abs(newPoint.y - origin.y) * 2;
     }
 }

@@ -5,8 +5,6 @@ import java.awt.*;
 public abstract class Shape {
     Point origin;
     Color color;
-//
-
 
     public Shape(Point origin, Color color) {
         this.origin = origin;

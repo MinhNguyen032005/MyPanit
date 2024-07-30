@@ -64,50 +64,48 @@ public class ActionWhenPaint implements IController {
                 } else {
                     start = false;
                     pointEnd = e.getPoint();
-//                    panelPaint.repaint();
-                    switch (titleShape) {
-                        case "Ellipse":
-                            lastShape = (new Ellipse(new Point(e.getX(), e.getY()),color));
-                            customPanel.getShapes().add(lastShape);
-                            break;
-                        case "Rhombus":
-                            lastShape = (new Rhombus(new Point(e.getX(), e.getY()),color));
-                            customPanel.getShapes().add(lastShape);
-                            break;
-                        case "Triangle":
-                            lastShape = (new Triangle(new Point(e.getX(), e.getY()),color));
-                            customPanel.getShapes().add(lastShape);
-                            break;
-                        case "Star":
-                            lastShape = (new Star(new Point(e.getX(), e.getY()),color));
-                            customPanel.getShapes().add(lastShape);
-                            break;
-                        case "Line":
-                            lastShape = (new Line(new Point(e.getX(), e.getY()),color));
-                            customPanel.getShapes().add(lastShape);
-                            break;
-                        case "Rec":
-                            lastShape = (new Rectangle(new Point(e.getX(), e.getY()),color));
-                            customPanel.getShapes().add(lastShape);
-                            break;
-                        case "Trapezoid":
-                            lastShape = (new Trapezoid(new Point(e.getX(), e.getY()),color));
-                            customPanel.getShapes().add(lastShape);
-                            break;
-                        case "RoundedSquare":
-                            lastShape = (new RoundedSquare(new Point(e.getX(), e.getY()),color));
-                            customPanel.getShapes().add(lastShape);
-                            break;
-                        case "SQuare":
-                            lastShape = (new Square(new Point(e.getX(), e.getY()),color));
-                            customPanel.getShapes().add(lastShape);
-                            break;
-                        case "Oval":
-                            lastShape = (new Oval(new Point(e.getX(), e.getY()),color));
-                            customPanel.getShapes().add(lastShape);
-                            break;
-                    }
-                    System.out.println(customPanel.getShapes());
+                }
+                switch (titleShape) {
+                    case "Ellipse":
+                        lastShape = (new Ellipse(new Point(e.getX(), e.getY()), color));
+                        customPanel.getShapes().add(lastShape);
+                        break;
+                    case "Rhombus":
+                        lastShape = (new Rhombus(new Point(e.getX(), e.getY()), color));
+                        customPanel.getShapes().add(lastShape);
+                        break;
+                    case "Triangle":
+                        lastShape = (new Triangle(new Point(e.getX(), e.getY()), color));
+                        customPanel.getShapes().add(lastShape);
+                        break;
+                    case "Star":
+                        lastShape = (new Star(new Point(e.getX(), e.getY()), color));
+                        customPanel.getShapes().add(lastShape);
+                        break;
+                    case "Line":
+                        lastShape = (new Line(new Point(e.getX(), e.getY()), color));
+                        customPanel.getShapes().add(lastShape);
+                        break;
+                    case "Rec":
+                        lastShape = (new Rectangle(new Point(e.getX(), e.getY()), color));
+                        customPanel.getShapes().add(lastShape);
+                        break;
+                    case "Trapezoid":
+                        lastShape = (new Trapezoid(new Point(e.getX(), e.getY()), color));
+                        customPanel.getShapes().add(lastShape);
+                        break;
+                    case "RoundedSquare":
+                        lastShape = (new RoundedSquare(new Point(e.getX(), e.getY()), color));
+                        customPanel.getShapes().add(lastShape);
+                        break;
+                    case "SQuare":
+                        lastShape = (new Square(new Point(e.getX(), e.getY()), color));
+                        customPanel.getShapes().add(lastShape);
+                        break;
+                    case "Oval":
+                        lastShape = (new Oval(new Point(e.getX(), e.getY()), color));
+                        customPanel.getShapes().add(lastShape);
+                        break;
                 }
             }
 
@@ -127,17 +125,7 @@ public class ActionWhenPaint implements IController {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String string = e.getActionCommand();
-                if (string.equals("Line")) titleShape = "Line";
-                else if (string.equals("Rec")) titleShape = "Rec";
-                else if (string.equals("Ellipse")) titleShape = "Ellipse";
-                else if (string.equals("SQuare")) titleShape = "SQuare";
-                else if (string.equals("Oval")) titleShape = "Oval";
-                else if (string.equals("Rhombus")) titleShape = "Rhombus";
-                else if (string.equals("Triangle")) titleShape = "Triangle";
-                else if (string.equals("Star")) titleShape = "Star";
-                else if (string.equals("Trapezoid")) titleShape = "Trapezoid";
-                else if (string.equals("RoundedSquare")) titleShape = "RoundedSquare";
+                titleShape = e.getActionCommand();
             }
         };
     }
@@ -155,7 +143,7 @@ public class ActionWhenPaint implements IController {
 
     @Override
     public ActionListener undoButtonListener() {
-        return  new ActionListener() {
+        return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ArrayList<Shape> shapes = customPanel.getShapes();
@@ -171,7 +159,7 @@ public class ActionWhenPaint implements IController {
 
     @Override
     public ActionListener redoButton() {
-        return  new ActionListener() {
+        return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (!redoStack.isEmpty()) {
@@ -210,7 +198,6 @@ public class ActionWhenPaint implements IController {
             }
         };
     }
-
 
 
     public static void main(String[] args) {

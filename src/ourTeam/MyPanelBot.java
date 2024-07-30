@@ -11,8 +11,6 @@ public class MyPanelBot extends JPanel {
 
     public MyPanelBot() {
         setLayout(new FlowLayout(FlowLayout.CENTER));
-        this.add(label= new JLabel("DRAWING........."));
+        this.add(label = new JLabel("DRAWING........."));
     }
-//
-    ////aNH mINH
 }

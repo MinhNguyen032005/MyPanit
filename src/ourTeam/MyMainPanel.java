@@ -15,8 +15,6 @@ public class MyMainPanel extends JPanel {
         this.panelTop= myPanelTop;
         MyPanelBot panelBot = new MyPanelBot();
         this.customPanel= customPanel;
-//        MyPanelPaint panelPaint = new MyPanelPaint(customPanel);
-//
         this.add(panelTop, BorderLayout.NORTH);
         this.add(this.panelLeft, BorderLayout.WEST);
         this.add(panelBot, BorderLayout.SOUTH);

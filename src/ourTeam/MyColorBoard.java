@@ -18,7 +18,7 @@ public class MyColorBoard extends JPanel {
         this.controller = controller;
         setLayout(new GridLayout(1, 2, 5, 5));
         isSelectedColor = new JPanel();
-        isSelectedColor.setBackground(Color.blue);
+        isSelectedColor.setBackground(Color.BLACK);
         this.add(isSelectedColor);
         panelColor = new JPanel(new GridLayout(2, 4, 5, 5));
         JButton[] btns = {Red, Green, Blue, Black, White, Pink, Yellow, Gray};

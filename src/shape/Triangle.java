@@ -2,13 +2,13 @@ package shape;
 
 import java.awt.*;
 
-public class Triangle extends Shape{
+public class Triangle extends Shape {
     Point point;
     Color color;
 
     public Triangle(Point origin, Color color) {
         super(origin, color);
-        point=new Point(origin.x,origin.y);
+        point = new Point(origin.x, origin.y);
         this.color = color;
     }
 
