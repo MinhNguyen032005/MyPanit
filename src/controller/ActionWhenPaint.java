@@ -61,6 +61,7 @@ public class ActionWhenPaint implements IController {
                 if (!start) {
                     start = true;
                     pointStart = e.getPoint();
+
                 } else {
                     start = false;
                     pointEnd = e.getPoint();
