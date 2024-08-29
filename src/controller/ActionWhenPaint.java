@@ -59,11 +59,9 @@ public class ActionWhenPaint implements IController {
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
                 if (!start) {
-                    start = true;
                     pointStart = e.getPoint();
 
                 } else {
-                    start = false;
                     pointEnd = e.getPoint();
                 }
                 switch (titleShape) {
