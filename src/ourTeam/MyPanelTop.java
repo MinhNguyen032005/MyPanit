@@ -8,7 +8,6 @@ import java.awt.event.*;
 import java.net.URL;
 
 public class MyPanelTop extends JPanel {
-    JCheckBox checkBox;
     JComboBox comboBox;
     JButton btnRedo, btnUndo, btnDelete, btnFill, btnPencil;
     IController controller;

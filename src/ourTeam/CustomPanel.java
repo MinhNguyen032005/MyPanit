@@ -11,11 +11,8 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class CustomPanel extends JPanel {
-    private final int SQUARE_SIZE = 20;
-    private double scaleFactor = 1.0;
     private IController controller;
     private ArrayList<shape.Shape> shapes;
-    private MyPanelTop panelTop;
     private Cursor pencilCursor;
     public CustomPanel(IController controller) {
         shapes = new ArrayList<>();
@@ -40,12 +37,6 @@ public class CustomPanel extends JPanel {
 
 
     }
-//        public  void zoomIn(){
-//            scalefactor *= 1.1;// increase the scale factor by 10%
-//            revalidate();
-//            repaint();
-//        }
-
     public ArrayList<Shape> getShapes() {
         return shapes;
     }
