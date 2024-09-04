@@ -10,11 +10,9 @@ import java.util.Arrays;
 public class MyPanelLeft extends JPanel {
     IController controller;
     JButton button;
-    private JButton btnLine, btnRec, btnOval, btnSQuare, btnEllipse, btnRhombus, btnTriangle, btnSquareOval, btnHThang, btnSao;
+    JButton btnLine, btnRec, btnOval, btnSQuare, btnEllipse, btnRhombus, btnTriangle, btnSquareOval, btnHThang, btnSao;
     ImageIcon icon;
-    ImageIcon icon1;
     ImageIcon[] iconArray;
-    int x;
 
     public MyPanelLeft(IController controller) {
         this.controller = controller;

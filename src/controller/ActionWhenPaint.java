@@ -5,9 +5,14 @@ import shape.*;
 import shape.Rectangle;
 import shape.Shape;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -19,14 +24,15 @@ public class ActionWhenPaint implements IController {
     private MyPanelBot panelBot;
     private MyMainPanel myMainPanel;
     private CustomPanel customPanel;
+    private MyMenuBar menuBar;
 
     Point pointStart;
     Point pointEnd;
     boolean start;
     String titleShape;
     shape.Shape lastShape;
-    String titleColor;
     Color color;
+    JFileChooser c = new JFileChooser();
 
     private ArrayList<Shape> undoStack = new ArrayList<>();
     private ArrayList<Shape> redoStack = new ArrayList<>();
@@ -36,11 +42,11 @@ public class ActionWhenPaint implements IController {
         panelLeft = new MyPanelLeft(this);
         customPanel = new CustomPanel(this);
         panelTop = new MyPanelTop(this);
+        menuBar = new MyMenuBar(this);
         myMainPanel = new MyMainPanel(panelLeft, customPanel, panelTop);
-        new MyFrame(myMainPanel);
+        new MyFrame(myMainPanel, this);
     }
 
-    // chuc nang ve
     @Override
     public MouseAdapter paintListener() {
         return new MouseAdapter() {
@@ -176,25 +182,80 @@ public class ActionWhenPaint implements IController {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                titleColor = e.getActionCommand();
-                if (titleColor.equals("Red")) {
-                    color = Color.red;
-                } else if (titleColor.equals("Green")) {
-                    color = Color.green;
-                } else if (titleColor.equals("Blue")) {
-                    color = Color.blue;
-                } else if (titleColor.equals("Black")) {
-                    color = Color.BLACK;
-                } else if (titleColor.equals("White")) {
-                    color = Color.white;
-                } else if (titleColor.equals("Pink")) {
-                    color = Color.pink;
-                } else if (titleColor.equals("Gray")) {
-                    color = Color.gray;
-                } else if (titleColor.equals("Yellow")) {
-                    color = Color.yellow;
+                switch (e.getActionCommand()) {
+                    case "Red":
+                        color = Color.red;
+                        break;
+                    case "Green":
+                        color = Color.green;
+                        break;
+                    case "Blue":
+                        color = Color.blue;
+                        break;
+                    case "Black":
+                        color = Color.BLACK;
+                        break;
+                    case "White":
+                        color = Color.white;
+                        break;
+                    case "Pink":
+                        color = Color.pink;
+                        break;
+                    case "Gray":
+                        color = Color.gray;
+                        break;
+                    case "Yellow":
+                        color = Color.yellow;
+                        break;
                 }
             }
+        };
+    }
+
+    @Override
+    public ActionListener selectJMenubar() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String command = e.getActionCommand();
+                if ("Save".equals(command)) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException g) {
+                        g.printStackTrace();
+                    }
+                    BufferedImage image = new BufferedImage(customPanel.getWidth(), customPanel.getHeight(), BufferedImage.TYPE_INT_RGB);
+                    Graphics2D g2d = image.createGraphics();
+                    customPanel.paint(g2d);
+                    g2d.dispose();
+
+                    JFileChooser fileChooser = new JFileChooser();
+                    fileChooser.setDialogTitle("Chọn nơi lưu ảnh");
+                    fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("PNG Images", "png"));
+
+                    int userSelection = fileChooser.showSaveDialog(null);
+                    if (userSelection == JFileChooser.APPROVE_OPTION) {
+                        File fileToSave = fileChooser.getSelectedFile();
+                        if (!fileToSave.getName().endsWith(".png")) {
+                            fileToSave = new File(fileToSave.getAbsolutePath() + ".png");
+                        }
+                        try {
+                            File file = new File("saved_image.png");
+                            File parentDir = file.getParentFile();
+                            if (parentDir != null) {
+                                parentDir.mkdirs();
+                            }
+                            ImageIO.write(image, "png", fileToSave);
+                            System.out.println("Image saved successfully.");
+                        } catch (IOException g) {
+                            g.printStackTrace();
+                        }
+                    } else if ("Exit".equals(command)) {
+                        System.exit(0);
+                    }
+                }
+            }
+
         };
     }
 

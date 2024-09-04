@@ -13,12 +13,12 @@ public class MyMainPanel extends JPanel {
         this.setLayout(new BorderLayout());
         this.panelLeft= panelLeft;
         this.panelTop= myPanelTop;
-        MyPanelBot panelBot = new MyPanelBot();
         this.customPanel= customPanel;
+        MyPanelBot panelBot = new MyPanelBot();
         this.add(panelTop, BorderLayout.NORTH);
-        this.add(this.panelLeft, BorderLayout.WEST);
+        this.add(panelLeft, BorderLayout.WEST);
         this.add(panelBot, BorderLayout.SOUTH);
-        this.add( this.customPanel, BorderLayout.CENTER);
+        this.add(customPanel, BorderLayout.CENTER);
 
 
 
